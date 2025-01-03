@@ -11,6 +11,13 @@ export default {
         background: "var(--background)",
         foreground: "var(--foreground)",
       },
+      screens: {
+        sm: "540px",
+        "2xl": "1360px",
+      },
+      fontFamily: {
+        dancingScript: ['var(--font-Dancing_Script)', 'cursive'],
+      },
     },
   },
   plugins: [],
