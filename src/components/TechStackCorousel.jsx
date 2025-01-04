@@ -1,16 +1,101 @@
-import { FaReact, FaNodeJs, FaDatabase, FaCss3Alt, FaHtml5, FaJs } from "react-icons/fa";
-
+import {
+  FaBootstrap,
+  FaCss3Alt,
+  FaDatabase,
+  FaGit,
+  FaGitAlt,
+  FaGithub,
+  FaHtml5,
+  FaJs,
+  FaMicrosoft,
+  FaNodeJs,
+  FaReact,
+} from "react-icons/fa";
+import {
+  SiBookstack,
+  SiExpress,
+  SiMongodb,
+  SiNetlify,
+  SiNextdotjs,
+  SiPostgresql,
+  SiPostman,
+  SiPython,
+  SiRender,
+  SiSupabase,
+  SiTailwindcss,
+} from "react-icons/si";
+import { FaCloudversify } from "react-icons/fa6";
+import {
+  TbBrandOffice,
+  TbBrandVercelFilled,
+  TbBrandVscode,
+} from "react-icons/tb";
 const techStack = [
-  { name: "React", icon: <FaReact size="40" className="text-blue-500" /> },
-  { name: "Node.js", icon: <FaNodeJs size="40" className="text-green-500" /> },
-  { name: "SQL", icon: <FaDatabase size="40" className="text-indigo-500" /> },
-  { name: "CSS3", icon: <FaCss3Alt size="40" className="text-blue-700" /> },
+  // Front-End
   { name: "HTML5", icon: <FaHtml5 size="40" className="text-orange-600" /> },
+  { name: "CSS3", icon: <FaCss3Alt size="40" className="text-blue-700" /> },
+  {
+    name: "Bootstrap",
+    icon: <FaBootstrap size="40" className="text-purple-600" />,
+  },
   { name: "JavaScript", icon: <FaJs size="40" className="text-yellow-500" /> },
+  { name: "React", icon: <FaReact size="40" className="text-blue-500" /> },
+  { name: "Next.js", icon: <SiNextdotjs size="40" className="text-black" /> },
+  {
+    name: "Tailwind CSS",
+    icon: <SiTailwindcss size="40" className="text-teal-500" />,
+  },
+  {
+    name: "Zustand",
+    icon: <SiBookstack size="40" className="text-orange-500" />,
+  },
+  {
+    name: "Framer Motion",
+    icon: (
+      <FaCloudversify size="40" className="text-gray-600 dark:text-gray-300" />
+    ),
+  },
+
+  // Back-End
+  { name: "Node.js", icon: <FaNodeJs size="40" className="text-green-500" /> },
+  { name: "Express.js", icon: <SiExpress size="40" className="text-black" /> },
+  { name: "Python", icon: <SiPython size="40" className="text-yellow-500" /> },
+  {
+    name: "Supabase",
+    icon: <SiSupabase size="40" className="text-green-500" />,
+  },
+  { name: "MongoDB", icon: <SiMongodb size="40" className="text-green-500" /> },
+  {
+    name: "PostgreSQL",
+    icon: <SiPostgresql size="40" className="text-blue-500" />,
+  },
+  { name: "SQL", icon: <FaDatabase size="40" className="text-indigo-500" /> },
+
+  // Tools & Platforms
+  {
+    name: "VS Code",
+    icon: <TbBrandVscode size="40" className="text-blue-500" />,
+  },
+  {
+    name: "Postman",
+    icon: <SiPostman size="40" className="text-orange-500" />,
+  },
+  { name: "Git", icon: <FaGitAlt size="40" className="text-orange-600" /> },
+  { name: "GitHub", icon: <FaGithub size="40" className="text-black" /> },
+  {
+    name: "MS Office",
+    icon: <TbBrandOffice size="40" className="text-red-500" />,
+  },
+  {
+    name: "Vercel",
+    icon: <TbBrandVercelFilled size="40" className="text-black" />,
+  },
+  { name: "Render", icon: <SiRender size="40" className="text-blue-500" /> },
+  { name: "Netlify", icon: <SiNetlify size="40" className="text-teal-500" /> },
 ];
 
 const TechStackCarousel = () => (
-  <section className="py-16 bg-gray-100 dark:bg-gray-900 text-center">
+  <section id='skills' className="py-16 bg-gray-100 dark:bg-gray-900 text-center">
     <h2 className="text-4xl font-bold text-primary dark:text-white mb-8">
       My Tech Stack
     </h2>

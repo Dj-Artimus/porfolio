@@ -27,7 +27,7 @@ const SkillBar = ({ name, level }) => (
 );
 
 const SkillSectionEnhanced = () => (
-  <section id="skills" className="py-16 px-8 bg-gray-100 dark:bg-gray-900">
+  <section className="py-16 px-8 bg-gray-100 dark:bg-gray-900">
     <div className="container mx-auto">
       <h2 className="text-4xl font-bold text-primary mb-8">My Skillset</h2>
       <div>

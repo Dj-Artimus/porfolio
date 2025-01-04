@@ -29,7 +29,7 @@ export const HeroContentTemplate = ({ key, sHeading, bHeading, mHeading }) => {
       <AnimatePresence mode="wait">
         <motion.div
           key={key}
-          className=" text-[7vw] lg:text-[3.3vw] w-fit h-[6vh] text-gray-300 hover:text-blue-500 hover:font-bold"
+          className=" text-[7vw] lg:text-[3.3vw] w-fit h-[6vh] text-gray-800 dark:text-gray-300 hover:text-blue-700 dark:hover:text-blue-500 hover:font-bold"
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ delay: 1.5, duration: 1 }}

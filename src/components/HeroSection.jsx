@@ -35,12 +35,46 @@ function Model() {
   return <primitive object={scene} scale={0.5} />;
 }
 
-const HeroSection = () => {
-  const [isMusicOn, setIsMusicOn] = useState(false);
-  // const [isMusicOn, setIsMusicOn] = useState(true);
+const HeroSection = ({ setIsLoading, isDark, isMusicOn }) => {
+  // const [isMusicOn, setIsMusicOn] = useState(false);
   const [isActionModelHover, setIsActionModelHover] = useState(false);
   const [isNameHover, setIsNameHover] = useState(false);
   const [currentHeroContent, setCurrentHeroContent] = useState(0);
+
+  const assets = [
+    `./videos/SayingHi_${isDark ? "darkMode" : "lightMode"}.mp4`,
+    `./videos/PlayingGuitar_${isDark ? "darkMode" : "lightMode"}.mp4`,
+    `./videos/WorkingOnLaptop_${isDark ? "darkMode" : "lightMode"}.mp4`,
+    "./images/helloWorld.gif",
+    "./images/responsiveDesigner.gif",
+    "./images/continuousDev.gif",
+    "./images/timeMoney.gif",
+    "./images/ideasToReality.gif",
+  ];
+
+  useEffect(() => {
+    const preloadAssets = async () => {
+      const promises = assets.map((asset) => {
+        return new Promise((resolve, reject) => {
+          const isVideo = asset.endsWith(".mp4");
+          const element = isVideo
+            ? document.createElement("video")
+            : new Image();
+          element.src = asset;
+          element.onload = resolve;
+          element.onerror = reject;
+          if (isVideo) {
+            element.onloadeddata = resolve;
+          }
+        });
+      });
+
+      await Promise.all(promises);
+      setIsLoading(false);
+    };
+
+    preloadAssets();
+  }, []);
 
   const HeroContent = useCallback(
     (isNameHover, setIsNameHover) => [
@@ -88,7 +122,7 @@ const HeroSection = () => {
                       stiffness: 260,
                       damping: 10,
                     }}
-                    className="block w-fit text-[8.35vw] sm:text-[7.2vw] lg:text-[4.2vw] text-gray-500"
+                    className="block w-fit text-[8.35vw] sm:text-[7.2vw] lg:text-[4.2vw] text-gray-700 dark:text-gray-500"
                     onMouseOver={() => {
                       setIsNameHover(true);
                     }}
@@ -104,7 +138,7 @@ const HeroSection = () => {
             <AnimatePresence mode="wait">
               <motion.div
                 key={"helloWorld"}
-                className=" text-[7vw] lg:text-[3.3vw] w-fit h-[6vh] text-gray-300 hover:text-blue-500 hover:font-bold"
+                className=" text-[7vw] lg:text-[3.3vw] w-fit h-[6vh] text-gray-800 dark:text-gray-300 hover:text-blue-700 dark:hover:text-blue-500 hover:font-bold"
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
                 transition={{ delay: 1.5, duration: 1 }}
@@ -206,9 +240,10 @@ const HeroSection = () => {
 
   return (
     <section
+      id="home"
       className={`sm:min-h-fit h-screen flex justify-center items-center bg-gray-200 dark:bg-gray-900 relative p-[3%] lg:px-[8%]`}
     >
-      <div className="w-full sm:min-h-fit lg:min-h-max h-full flex flex-col-reverse lg:flex-row justify-center items-center bg-white dark:bg-black rounded-b-[8vw] sm:rounded-[4.5vw] lg:rounded-[2.5vw] shadow-sm shadow-gray-500 lg:shadow-md lg:shadow-gray-500 border-[3px] border-gray-600 overflow-hidden">
+      <div className="w-full sm:min-h-fit lg:min-h-max h-full flex flex-col-reverse lg:flex-row justify-center items-center bg-white dark:bg-black rounded-b-[8vw] sm:rounded-[4.5vw] lg:rounded-[2.5vw] shadow-sm shadow-gray-500 lg:shadow-gray-500 border-[3px] border-gray-600 overflow-hidden">
         {/* <div className="w-full h-full border border-blue-500"></div>
         <div className="w-full h-full border border-red-500"></div> */}
 
@@ -218,26 +253,33 @@ const HeroSection = () => {
           transition={{ duration: 1, delay: 2.5 }}
           className="w-full h-1/2 sm:h-full sm:min-h-[700px] md:min-h-[900px] lg:min-h-max lg:w-[80%] flex sm:flex-shrink flex-shrink-0 justify-center items-center bor der border-red-500 relative px-[3vw] lg:px-0 overflow-hidden"
         >
-          <div className="relative w-1/2 lg:justify-center items-center hidden dark:flex ms-[10vw] lg:ms-0">
+          <div className="relative w-1/2 lg:justify-center items-center flex ms-[10vw] lg:ms-0">
             {isActionModelHover ? (
               <HeroVideoTemplate
                 videoKey="sayingHi_darkMode"
-                src="./videos/SayingHi_darkMode.mp4"
-                styles="h-full scale-[1.4] lg:scale-110 bor der -ms-[5vw]"
+                src={`./videos/SayingHi_${
+                  isDark ? "darkMode" : "lightMode"
+                }.mp4`}
+                styles="h-full scale-[1.4] lg:scale-[1.07] bor der -ms-[5vw]"
                 loop={false}
               />
             ) : isMusicOn ? (
               <HeroVideoTemplate
                 videoKey="playingGuitar_darkMode"
-                src="./videos/PlayingGuitar_darkMode.mp4"
+                src={`./videos/PlayingGuitar_${
+                  isDark ? "darkMode" : "lightMode"
+                }.mp4`}
                 styles="h-full scale-[2] ms-[2vw] lg:scale-[1.6] lg:ms-0 bor der"
                 loop={true}
               />
             ) : (
               <HeroVideoTemplate
                 videoKey="workingOnLaptop_darkMode"
-                src="./videos/WorkingOnLaptop_darkMode.mp4"
-                styles="h-full scale-[1.4] lg:scale-110 bor der"
+                src={`./videos/WorkingOnLaptop_${
+                  isDark ? "darkMode" : "lightMode"
+                }.mp4`}
+                // src={`./videos/WorkingOnLaptop_lightMode.mp4`}
+                styles="h-full scale-[1.4] lg:scale-[1.11] bor der"
                 loop={true}
               />
             )}

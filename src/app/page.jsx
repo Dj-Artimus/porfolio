@@ -1,7 +1,7 @@
 "use client";
 
 import Head from "next/head";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import Navbar from "@/components/Navbar";
 import HeroSection from "@/components/HeroSection";
 import HighlightSection from "@/components/HighlightSection";
@@ -19,8 +19,28 @@ import Logo from "@/components/Logo";
 
 const Home = () => {
   const [isDark, setDark] = useState(false);
+  const [isMusicOn, setIsMusicOn] = useState(false);
+  const [isLoading, setIsLoading] = useState(true);
 
-  const toggleTheme = () => setDark(!isDark);
+  useEffect(() => {
+    const storedTheme = localStorage.getItem("theme");
+    if (storedTheme) {
+      setDark(storedTheme === "dark");
+    } else {
+      const userPrefersDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
+      setDark(userPrefersDark);
+    }
+  }, []);
+
+  const toggleTheme = () => {
+    setDark((prev) => {
+      const newTheme = !prev;
+      localStorage.setItem("theme", newTheme ? "dark" : "light");
+      return newTheme;
+    });
+  };
+
+  const toggleMusic = () => { setIsMusicOn((prev) => !prev); };
 
   return (
     <div className={`${isDark ? "dark" : ""}`}>
@@ -31,22 +51,22 @@ const Home = () => {
           content="Pratik <DjArtimus> is a Full-Stack Developer skilled in React, Next.js, Node.js, Express.js, SQL, PostGreSQL and more. Check out Pratik's work and skills."
         />
       </Head>
-      <Logo />
-        <Navbar toggleTheme={toggleTheme} isDarkMode={isDark} />
-        <main>
-          <HeroSection />
-          {/* <HomeSection /> */}
-          <HighlightSection />
-          <CallToAction />
-          <TechStackCarousel />
-          <Testimonials />
-          <ProjectsSection />
-          <Projects />
-          <SkillSectionEnhanced />
-          <AboutSection />
-          <ContactSection />
-        </main>
-        <Footer />
+      <Navbar onThemeToggle={toggleTheme} isDarkMode={isDark} onMusicToggle={toggleMusic} isMusicOn={isMusicOn} />
+      <main className="text-black dark:text-white" >
+        <Logo />
+        <HeroSection setIsLoading={setIsLoading} isDark={isDark} isMusicOn={isMusicOn} />
+        <TechStackCarousel />
+        {/* <HomeSection /> */}
+        <HighlightSection />
+        <CallToAction />
+        <Testimonials />
+        <ProjectsSection />
+        <Projects />
+        <SkillSectionEnhanced />
+        <AboutSection />
+        <ContactSection />
+      </main>
+      <Footer />
     </div>
   );
 };
