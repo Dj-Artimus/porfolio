@@ -7,14 +7,6 @@ import React, {
 } from "react";
 import { AnimatePresence, motion } from "framer-motion";
 import { Typewriter } from "react-simple-typewriter"; // Already installed
-import { Canvas } from "@react-three/fiber";
-import {
-  ContactShadows,
-  Environment,
-  Html,
-  OrbitControls,
-  useGLTF,
-} from "@react-three/drei";
 import {
   HeroContentTemplate,
   HeroImageTemplate,
@@ -24,16 +16,10 @@ import Link from "next/link";
 import {
   FaGithubSquare,
   FaLinkedin,
-  FaTwitterSquare,
   FaYoutubeSquare,
 } from "react-icons/fa";
 import { FaSquareXTwitter } from "react-icons/fa6";
 import { ImProfile } from "react-icons/im";
-
-function Model() {
-  const { scene } = useGLTF("/models/PortfolioModel.glb");
-  return <primitive object={scene} scale={0.5} />;
-}
 
 const HeroSection = ({ setIsLoading, isDark, isMusicOn }) => {
   // const [isMusicOn, setIsMusicOn] = useState(false);
@@ -230,7 +216,7 @@ const HeroSection = ({ setIsLoading, isDark, isMusicOn }) => {
           <img
             src="./images/ideasToReality.gif"
             alt="ideasToReality"
-            className="w-[50vw] sm:w-[35vw] lg:w-[13.5vw] aspect-[16/9] object-cover rounded-[4vw] lg:rounded-[1.6vw] bg-gray-900 p-[2.3vw] sm:p-[1.7vw] lg:p-[0.75vw] lg:hover:p-[0.5vw] transition-all duration-300"
+            className="w-[50vw] sm:w-[35vw] lg:w-[13.5vw] aspect-[16/9] object-cover rounded-[4vw] lg:rounded-[1.6vw] dark:bg-gray-900 p-[2.3vw] sm:p-[1.7vw] lg:p-[0.75vw] lg:hover:p-[0.5vw] transition-all duration-300"
           />
         ),
       },
@@ -241,11 +227,9 @@ const HeroSection = ({ setIsLoading, isDark, isMusicOn }) => {
   return (
     <section
       id="home"
-      className={`sm:min-h-fit h-screen flex justify-center items-center bg-gray-200 dark:bg-gray-900 relative p-[3%] lg:px-[8%]`}
+      className={`sm:min-h-fit h-screen flex justify-center items-center bg-gray-100 dark:bg-gray-900 relative p-[3%] lg:px-[8%]`}
     >
       <div className="w-full sm:min-h-fit lg:min-h-max h-full flex flex-col-reverse lg:flex-row justify-center items-center bg-white dark:bg-black rounded-b-[8vw] sm:rounded-[4.5vw] lg:rounded-[2.5vw] shadow-sm shadow-gray-500 lg:shadow-gray-500 border-[3px] border-gray-600 overflow-hidden">
-        {/* <div className="w-full h-full border border-blue-500"></div>
-        <div className="w-full h-full border border-red-500"></div> */}
 
         <motion.div
           initial={{ opacity: 0 }}
@@ -278,7 +262,6 @@ const HeroSection = ({ setIsLoading, isDark, isMusicOn }) => {
                 src={`./videos/WorkingOnLaptop_${
                   isDark ? "darkMode" : "lightMode"
                 }.mp4`}
-                // src={`./videos/WorkingOnLaptop_lightMode.mp4`}
                 styles="h-full scale-[1.4] lg:scale-[1.11] bor der"
                 loop={true}
               />
@@ -301,42 +284,42 @@ const HeroSection = ({ setIsLoading, isDark, isMusicOn }) => {
             <div className="w-full flex flex-col justify-center items-center gap-[5vw] px-[2vw]">
               <a
                 href="#projects"
-                className="text-[5vw] w-full px-[4vw] py-[1.5vh] text-center lg:p-[1.5vw] lg:py-[1.5vh] lg:text-[1.3vw] lg:hover:text-[1.5vw] border rounded-[2vw] hover:text-blue-300 hover:font-bold hover:shadow-blue-500 inline-block hover:scale-110 font-semibold shadow-md transition-all duration-200 active:scale-100"
+                className="text-[5vw] w-full px-[4vw] py-[1.5vh] text-center lg:p-[1.5vw] lg:py-[1.5vh] lg:text-[1.3vw] lg:hover:text-[1.5vw] border border-gray-900 dark:border-gray-200 rounded-[2vw] hover:text-blue-600 dark:hover:text-blue-300 hover:font-bold hover:shadow-blue-500 inline-block hover:scale-110 font-semibold shadow-md transition-all duration-200 active:scale-100"
               >
                 Explore <br /> My Work
               </a>
               <a
                 href="#contact"
-                className="text-[5vw] w-full px-[4vw] py-[1.5vh] text-center lg:p-[1.5vw] lg:py-[1.5vh] lg:text-[1.3vw] lg:hover:text-[1.5vw] border rounded-full hover:text-blue-300 hover:font-bold hover:shadow-blue-500 inline-block hover:scale-110 font-semibold shadow-md transition-all duration-200 active:scale-100"
+                className="text-[5vw] w-full px-[4vw] py-[1.5vh] text-center lg:p-[1.5vw] lg:py-[1.5vh] lg:text-[1.3vw] lg:hover:text-[1.5vw] border border-gray-900 dark:border-gray-200 rounded-full hover:text-blue-600 dark:hover:text-blue-300 hover:font-bold hover:shadow-blue-500 inline-block hover:scale-110 font-semibold shadow-md transition-all duration-200 active:scale-100"
               >
                 Contact Me
               </a>
             </div>
             <div className="flex gap-[6vw] mt-[3vh] flex-col justify-center items-center bor der ">
-              <div className="flex w-[70%] justify-between">
+              <div className="flex w-[70%] justify-between items-center h-[6vh]">
                 <Link
                   href="https://github.com/Dj-Artimus"
-                  className=" text-[11vw] hover:text-[13vw] border transform origin-center rounded-full hover:font-bold hover:shadow-blue-500 hover:scale-110 font-semibold shadow-md transition-all active:scale-100"
+                  className=" text-[11vw] hover:text-[13vw] border border-gray-900 dark:border-gray-200 transform origin-center rounded-full hover:font-bold hover:shadow-blue-500 hover:scale-110 font-semibold shadow-md transition-all active:scale-100"
                 >
                   <FaGithubSquare />
                 </Link>
                 <Link
                   href="https://www.linkedin.com/in/pratikpansare"
-                  className=" text-[11vw] hover:text-[13vw] border transform origin-center rounded-full hover:font-bold hover:shadow-blue-500 hover:scale-110 font-semibold shadow-md transition-all active:scale-100"
+                  className=" text-[11vw] hover:text-[13vw] border border-gray-900 dark:border-gray-200 transform origin-center rounded-full hover:font-bold hover:shadow-blue-500 hover:scale-110 font-semibold shadow-md transition-all active:scale-100"
                 >
                   <FaLinkedin />
                 </Link>
               </div>
-              <div className="flex w-[70%] justify-between">
+              <div className="flex w-[70%] justify-between items-center h-[6vh]">
                 <Link
                   href="https://youtube.com/@djartimus?si=J16h2VNskYw0YbHz"
-                  className=" text-[11vw] hover:text-[13vw] border transform origin-center flex-shrink-0 rounded-full hover:font-bold hover:shadow-blue-500 hover:scale-110 font-semibold shadow-md transition-all active:scale-100"
+                  className=" text-[11vw] hover:text-[13vw] border border-gray-900 dark:border-gray-200 transform origin-center flex-shrink-0 rounded-full hover:font-bold hover:shadow-blue-500 hover:scale-110 font-semibold shadow-md transition-all active:scale-100"
                 >
                   <FaYoutubeSquare />
                 </Link>
                 <Link
                   href="https://x.com/Dj_Artimus?t=0HK49JZRYxEmeqWiD5M9yQ&s=09"
-                  className=" text-[11vw] hover:text-[13vw] border transform origin-center flex-shrink-0 rounded-full hover:font-bold hover:shadow-blue-500 hover:scale-110 font-semibold shadow-md transition-all active:scale-100"
+                  className=" text-[11vw] hover:text-[13vw] border border-gray-900 dark:border-gray-200 transform origin-center flex-shrink-0 rounded-full hover:font-bold hover:shadow-blue-500 hover:scale-110 font-semibold shadow-md transition-all active:scale-100"
                 >
                   <FaSquareXTwitter />
                 </Link>
@@ -423,15 +406,6 @@ const HeroSection = ({ setIsLoading, isDark, isMusicOn }) => {
           >
             <p className="">Resume</p>
             <ImProfile className="" />
-
-            <motion.div
-              initial={{ opacity: 0, scale: 0.9 }}
-              animate={{ opacity: 1, scale: 1 }}
-              transition={{ duration: 1 }}
-              className=" hidden w-fit absolute bottom-[3vh] right-[1.5vw] hover:flex items-center gap-2 border rounded-full p-[1.5vw] py-[1vh] hover:text-blue-300 hover:font-bold hover:shadow-blue-500 shadow-md text-[1.5vw] hover:text-[1.9vw] transition-all duration-300"
-            >
-              <ImProfile className="" />
-            </motion.div>
           </motion.div>
         </div>
       </div>

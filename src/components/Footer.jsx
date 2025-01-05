@@ -1,4 +1,5 @@
-import { FaGithub, FaLinkedin, FaTwitter } from 'react-icons/fa';
+import { FaGithub, FaLinkedin } from 'react-icons/fa';
+import { FaSquareXTwitter } from 'react-icons/fa6';
 
 const Footer = () => (
   <footer className="bg-gray-200 dark:bg-gray-900 text-gray-800 dark:text-gray-300 py-8">
@@ -12,7 +13,7 @@ const Footer = () => (
       {/* Social Links */}
       <div className="flex justify-center gap-6 mb-8">
         <a
-          href="https://github.com/your-github"
+          href="https://github.com/Dj-Artimus"
           target="_blank"
           rel="noopener noreferrer"
           className="text-gray-800 dark:text-gray-300 hover:text-primary transition"
@@ -20,7 +21,7 @@ const Footer = () => (
           <FaGithub size="28" />
         </a>
         <a
-          href="https://linkedin.com/in/your-linkedin"
+          href="https://www.linkedin.com/in/pratikpansare"
           target="_blank"
           rel="noopener noreferrer"
           className="text-gray-800 dark:text-gray-300 hover:text-primary transition"
@@ -28,17 +29,17 @@ const Footer = () => (
           <FaLinkedin size="28" />
         </a>
         <a
-          href="https://twitter.com/your-twitter"
+          href="https://x.com/Dj_Artimus?t=0HK49JZRYxEmeqWiD5M9yQ&s=09"
           target="_blank"
           rel="noopener noreferrer"
           className="text-gray-800 dark:text-gray-300 hover:text-primary transition"
         >
-          <FaTwitter size="28" />
+          <FaSquareXTwitter size="28" />
         </a>
       </div>
       {/* Footer Bottom */}
       <p className="text-sm">
-        © {new Date().getFullYear()} Mark's Portfolio. Built with React, Next.js & Tailwind CSS.
+        © {new Date().getFullYear()} DjArtimus's Portfolio. Built with Love ❤.
       </p>
     </div>
   </footer>

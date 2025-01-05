@@ -57,13 +57,10 @@ const Home = () => {
         <HeroSection setIsLoading={setIsLoading} isDark={isDark} isMusicOn={isMusicOn} />
         <TechStackCarousel />
         {/* <HomeSection /> */}
-        <HighlightSection />
-        <CallToAction />
-        <Testimonials />
-        <ProjectsSection />
+        {/* <HighlightSection /> */}
+        <CallToAction isDark={isDark} />
         <Projects />
-        <SkillSectionEnhanced />
-        <AboutSection />
+        <AboutSection isDark={isDark} />
         <ContactSection />
       </main>
       <Footer />

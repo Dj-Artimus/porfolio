@@ -86,7 +86,7 @@ const Navbar = ({ onThemeToggle, isDarkMode, onMusicToggle, isMusicOn }) => {
           {isSettingsOpen && (
             <div
               ref={settingsRef}
-              className="absolute right-0 bottom-[4vh] lg:bottom-auto lg:top-[1.2vh] mt-2 w-[45vw] lg:w-[16vw] bg-white dark:bg-gray-800 border border-gray-300 dark:border-gray-700 rounded-lg shadow-lg p-[1.2vw]"
+              className="absolute right-0 bottom-[4vh] lg:bottom-auto lg:top-[1.2vh] mt-2 w-[45vw] lg:w-[16vw] bg-white dark:bg-gray-800 border border-gray-300 dark:border-gray-700 rounded-lg shadow-lg p-[2vw] lg:p-[1.2vw]"
             >
               <div className="flex justify-between items-center mb-4">
                 <div className="flex gap-[2vw] lg:gap-[1vw] items-center text-[5.5vw] lg:text-[1.4vw] font-bold">

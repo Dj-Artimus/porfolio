@@ -51,7 +51,7 @@ export const HeroImageTemplate = ({ imageKey, src }) => {
         transition={{ duration: 0.5 }}
         src={src}
         alt={imageKey}
-        className="w-[50vw] sm:w-[35vw] lg:w-[13.5vw] aspect-[16/9] object-cover rounded-[4vw] lg:rounded-[1.6vw] bg-black p-[2.3vw] sm:p-[1.7vw] lg:p-[0.75vw] lg:hover:p-[0.5vw] transition-all duration-300"
+        className="w-[50vw] sm:w-[35vw] lg:w-[13.5vw] aspect-[16/9] object-cover rounded-[4vw] lg:rounded-[1.6vw] dark:bg-black p-[2.3vw] sm:p-[1.7vw] lg:p-[0.75vw] lg:hover:p-[0.5vw] transition-all duration-300"
       />
     </AnimatePresence>
   );
