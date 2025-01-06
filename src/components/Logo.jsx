@@ -8,7 +8,6 @@ const Logo = () => {
   const controlLogo = () => {
     if (typeof window !== "undefined") {
       if (window.scrollY > 20) {
-        console.log("scroll", window.scrollY);
         // if scroll down hide the logo
         setIsVisible(false);
       } else {

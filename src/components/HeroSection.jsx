@@ -13,11 +13,7 @@ import {
   HeroVideoTemplate,
 } from "./HeroTemplates";
 import Link from "next/link";
-import {
-  FaGithubSquare,
-  FaLinkedin,
-  FaYoutubeSquare,
-} from "react-icons/fa";
+import { FaGithubSquare, FaLinkedin, FaYoutubeSquare } from "react-icons/fa";
 import { FaSquareXTwitter } from "react-icons/fa6";
 import { ImProfile } from "react-icons/im";
 
@@ -230,7 +226,6 @@ const HeroSection = ({ setIsLoading, isDark, isMusicOn }) => {
       className={`sm:min-h-fit h-screen flex justify-center items-center bg-gray-100 dark:bg-gray-900 relative p-[3%] lg:px-[8%]`}
     >
       <div className="w-full sm:min-h-fit lg:min-h-max h-full flex flex-col-reverse lg:flex-row justify-center items-center bg-white dark:bg-black rounded-b-[8vw] sm:rounded-[4.5vw] lg:rounded-[2.5vw] shadow-sm shadow-gray-500 lg:shadow-gray-500 border-[3px] border-gray-600 overflow-hidden">
-
         <motion.div
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
@@ -299,11 +294,13 @@ const HeroSection = ({ setIsLoading, isDark, isMusicOn }) => {
               <div className="flex w-[70%] justify-between items-center h-[6vh]">
                 <Link
                   href="https://github.com/Dj-Artimus"
+                  target="_blank"
                   className=" text-[11vw] hover:text-[13vw] border border-gray-900 dark:border-gray-200 transform origin-center rounded-full hover:font-bold hover:shadow-blue-500 hover:scale-110 font-semibold shadow-md transition-all active:scale-100"
                 >
                   <FaGithubSquare />
                 </Link>
                 <Link
+                  target="_blank"
                   href="https://www.linkedin.com/in/pratikpansare"
                   className=" text-[11vw] hover:text-[13vw] border border-gray-900 dark:border-gray-200 transform origin-center rounded-full hover:font-bold hover:shadow-blue-500 hover:scale-110 font-semibold shadow-md transition-all active:scale-100"
                 >
@@ -312,12 +309,14 @@ const HeroSection = ({ setIsLoading, isDark, isMusicOn }) => {
               </div>
               <div className="flex w-[70%] justify-between items-center h-[6vh]">
                 <Link
+                  target="_blank"
                   href="https://youtube.com/@djartimus?si=J16h2VNskYw0YbHz"
                   className=" text-[11vw] hover:text-[13vw] border border-gray-900 dark:border-gray-200 transform origin-center flex-shrink-0 rounded-full hover:font-bold hover:shadow-blue-500 hover:scale-110 font-semibold shadow-md transition-all active:scale-100"
                 >
                   <FaYoutubeSquare />
                 </Link>
                 <Link
+                  target="_blank"
                   href="https://x.com/Dj_Artimus?t=0HK49JZRYxEmeqWiD5M9yQ&s=09"
                   className=" text-[11vw] hover:text-[13vw] border border-gray-900 dark:border-gray-200 transform origin-center flex-shrink-0 rounded-full hover:font-bold hover:shadow-blue-500 hover:scale-110 font-semibold shadow-md transition-all active:scale-100"
                 >
@@ -356,24 +355,28 @@ const HeroSection = ({ setIsLoading, isDark, isMusicOn }) => {
             </div>
             <div className="h-[6vh] w-[16vw] flex justify-between items-center bor der absolute top-[11vh]">
               <Link
+                target="_blank"
                 href="https://github.com/Dj-Artimus"
                 className=" text-[3vw] hover:text-[3.6vw] border transform origin-center rounded-full hover:font-bold hover:shadow-blue-500 hover:scale-110 font-semibold shadow-md transition-all active:scale-100"
               >
                 <FaGithubSquare />
               </Link>
               <Link
+                target="_blank"
                 href="https://www.linkedin.com/in/pratikpansare"
                 className=" text-[3vw] hover:text-[3.6vw] border transform origin-center rounded-full hover:font-bold hover:shadow-blue-500 hover:scale-110 font-semibold shadow-md transition-all active:scale-100"
               >
                 <FaLinkedin />
               </Link>
               <Link
+                target="_blank"
                 href="https://youtube.com/@djartimus?si=J16h2VNskYw0YbHz"
                 className=" text-[3vw] hover:text-[3.6vw] border transform origin-center flex-shrink-0 rounded-full hover:font-bold hover:shadow-blue-500 hover:scale-110 font-semibold shadow-md transition-all active:scale-100"
               >
                 <FaYoutubeSquare />
               </Link>
               <Link
+                target="_blank"
                 href="https://x.com/Dj_Artimus?t=0HK49JZRYxEmeqWiD5M9yQ&s=09"
                 className=" text-[3vw] hover:text-[3.6vw] border transform origin-center flex-shrink-0 rounded-full hover:font-bold hover:shadow-blue-500 hover:scale-110 font-semibold shadow-md transition-all active:scale-100"
               >
@@ -402,10 +405,12 @@ const HeroSection = ({ setIsLoading, isDark, isMusicOn }) => {
             initial={{ opacity: 0, scale: 0.9 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.7, delay: 4 }}
-            className=" w-fit hidden absolute bottom-[3vh] right-[1.5vw] lg:flex items-center gap-[1vw] border rounded-full p-[1.5vw] py-[1vh] hover:text-blue-300 hover:font-bold hover:shadow-blue-500 shadow-md text-[1.5vw] hover:text-[1.9vw] transition-all duration-200"
+            className="w-fit hidden absolute bottom-[3vh] right-[1.5vw] "
           >
-            <p className="">Resume</p>
-            <ImProfile className="" />
+            <Link target="_blank" href={"https://drive.google.com/file/d/1tfZankoER687X23j0JZ9BVZwov_wSYPj/view?usp=drivesdk"} className="lg:flex items-center gap-[1vw] border rounded-full p-[1.5vw] py-[1vh] hover:text-blue-300 hover:font-bold hover:shadow-blue-500 shadow-md text-[1.5vw] hover:text-[1.9vw] transition-all duration-200">
+              <p className="">Resume</p>
+              <ImProfile className="" />
+            </Link>
           </motion.div>
         </div>
       </div>

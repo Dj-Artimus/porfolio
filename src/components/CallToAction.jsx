@@ -1,6 +1,7 @@
 import { FaQuoteLeft, FaQuoteRight } from "react-icons/fa6";
 import { HeroVideoTemplate } from "./HeroTemplates";
 import { motion } from "framer-motion";
+import Link from "next/link";
 
 const CallToAction = ({ isDark }) => (
   <section className="py-16 px-6 bg-white dark:bg-black dark:text-white text-black text-center">
@@ -62,13 +63,21 @@ const CallToAction = ({ isDark }) => (
             something amazing together.
           </p>
         </div>
-        <div className="flex justify-center lg:justify-start gap-6">
+        <div className="flex justify-center gap-6 mt-2">
           <a
             href="#contact"
-            className="px-6 py-2 border border-gray-700 rounded-xl dark:border-gray-200 hover:bg-white hover:text-blue-600 dark:hover:text-blue-300 transition hover:scale-110"
+            className="px-6 py-2 border border-gray-700 rounded-xl dark:border-gray-200 hover:text-blue-600 dark:hover:text-blue-400 hover:font-bold transition hover:scale-110"
           >
             Contact Me
           </a>
+          <Link
+            href={"https://drive.google.com/file/d/1tfZankoER687X23j0JZ9BVZwov_wSYPj/view?usp=drivesdk"}
+            target="_blank"
+            className="px-6 py-2 border border-gray-700 rounded-xl dark:border-gray-200 hover:text-blue-600 dark:hover:text-blue-400 hover:font-bold transition hover:scale-110"
+          >
+            View Resume
+          </Link>
+
         </div>
       </motion.div>
     </div>

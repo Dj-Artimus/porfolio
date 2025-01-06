@@ -16,10 +16,10 @@ const projects = [
       "React",
       "Next.js",
       "Tailwind CSS",
+      "Zustand",
       "Supabase",
       "PostgreSQL",
       "Framer Motion",
-      "Zustand",
     ],
     links: {
       liveDemo: "https://social-ocean.vercel.app/",
@@ -69,7 +69,7 @@ const projects = [
   {
     title: "Temporal Journey of Eternal Ticker - The Birth Clock",
     description:
-      "Temporal Journey of Eternal Ticker is a progressive web app that functions as a running timer, ticking every millisecond from the users birth date and time. It visually represents the time elapsed since the users existence in the universe. Built using HTML, CSS, and JavaScript, this project was a great opportunity to hone my skills and explore new technologies.",
+      "This is a progressive web app that functions as a running timer, ticking every millisecond from the users birth date and time. It visually represents the time elapsed since the users existence in the universe.",
     points: [
       "Real-Time Timer:Continuously updates to show the exact time since the users birth.",
       "Progressive Web App:Offers a  app like experience across all operating systems.",
@@ -85,16 +85,16 @@ const projects = [
 
 const ProjectCard = ({ title, description, points, tags, links }) => (
   <motion.div
-    className="p-6 bg-white dark:bg-gray-800 shadow-md rounded-lg"
+    className="p-3  py-4 bg-white dark:bg-gray-800 shadow-md rounded-lg"
     initial={{ opacity: 0, y: 50 }}
     animate={{ opacity: 1, y: 0 }}
     transition={{ duration: 0.5 }}
   >
-    <div className="flex flex-col lg:flex-row justify-between lg:items-center mb-2 lg:mb-0">
-      <h3 className="text-xl font-bold mb-2 text-blue-700 dark:text-blue-400">
+    <div className="flex flex-row justify-between gap-2 mb-2 border-gray-500 dark:border-gray-600 items-start border rounded-xl p-2">
+      <h3 className="text-xl font-bold text-blue-700 dark:text-blue-400">
         {title}
       </h3>
-      <div className="flex justify-end items-center gap-4 text-xl ">
+      <div className="flex flex-col lg:flex-row justify-end items-center gap-2 lg:gap-4 text-2xl ">
         <Link href={links.liveDemo} className="hover:text-blue-700 dark:hover:text-blue-400 hover:scale-125 inline-block" >
           <FaExternalLinkAlt />
         </Link>
@@ -103,7 +103,7 @@ const ProjectCard = ({ title, description, points, tags, links }) => (
         </Link>
       </div>
     </div>
-    <p className="mb-2 font-semibold">{description}</p>
+    <p className="mb-2 px-3 font-semibold">{description}</p>
     <ul className="text-gray-800 dark:text-gray-200">
       {points.map((point, idx) => (
         <li key={idx} className="list-disc ml-6 mb-2">
@@ -111,8 +111,8 @@ const ProjectCard = ({ title, description, points, tags, links }) => (
         </li>
       ))}
     </ul>
-    <hr className="my-4"/>
-    <div className="flex gap-2 flex-wrap">
+    <hr className="my-4 border-gray-700 dark:border-gray-300"/>
+    <div className="flex gap-2 px-1 flex-wrap">
       {tags.map((tag, idx) => (
         <span
           key={idx}
@@ -129,7 +129,7 @@ const Projects = () => (
   <section id="projects" className="py-16 px-8 bg-gray-100 dark:bg-gray-900">
     <div className="container mx-auto max-w-3xl 2xl:max-w-5xl">
       <h2 className="text-4xl font-bold mb-8 text-center">My Projects</h2>
-      <div className="grid grid-cols-1 gap-8">
+      <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
         {projects.map((project, idx) => (
           <ProjectCard {...project} key={idx} />
         ))}
