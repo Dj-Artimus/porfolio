@@ -13,7 +13,13 @@ export default {
         foreground: "var(--foreground)",
       },
       screens: {
+        xs:'320px',
+        xs1:'375px',
+        xs2:'430px',
+        xs3:'470px',
         sm: "540px",
+        sm1: "640px",
+        md1: "880px",
         "2xl": "1360px",
       },
       fontFamily: {

@@ -45,9 +45,9 @@ const AboutSection = ({ isDark }) => (
             </span>{" "}
             , a quality-oriented{" "}
             <span className=" font-semibold text-blue-700 dark:text-blue-500">
-              Full-Stack Developer.
+              Full-Stack Developer,
             </span>{" "}
-            I specialize in creating dynamic, responsive, and scalable web
+            who is specialize in creating dynamic, responsive, and scalable web
             applications using modern technologies like{" "}
             <span className=" font-semibold text-blue-700 dark:text-blue-500">
               Next.js, MERN Stack, SQL Databases and more...
@@ -63,8 +63,7 @@ const AboutSection = ({ isDark }) => (
             <span className=" font-semibold text-blue-700 dark:text-blue-500">
               robotics, ai, cyber-security, space science
             </span>
-            . I also express my creativity through drawings, crafting arts and
-            enjoy fitness trainings. I'm always eager to tackle new challenges
+            . I enjoy fitness trainings and express my creativity through drawings, crafting arts, etc. I'm always eager to tackle new challenges
             that push the {" "}
             <span className=" font-semibold text-blue-700 dark:text-blue-500">
             boundaries of innovation
@@ -73,7 +72,7 @@ const AboutSection = ({ isDark }) => (
             <span className=" font-semibold text-blue-700 dark:text-blue-500">
               opportunities to collaborate 
             </span>{" "}
-            on exciting projects and make{" "}
+            on exciting projects to make{" "}
             <span className=" font-semibold text-blue-700 dark:text-blue-500">
               meaningful impacts in the tech industry.
             </span>
@@ -84,7 +83,7 @@ const AboutSection = ({ isDark }) => (
               <span className="text-blue-700 dark:text-blue-500">
                 User-Centric Developer
               </span>
-              : I craft apps that are not only functional but visually engaging
+              : I build apps that are not only functional but visually engaging
               and intuitive
             </li>
             <li>

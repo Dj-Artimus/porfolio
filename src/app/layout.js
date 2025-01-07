@@ -18,9 +18,9 @@ const dancingFont= Dancing_Script({
 });
 
 export const metadata = {
-  title: "Portfolio - Pratik / DjArtimus ",
-  description: "Explore the portfolio of Pratik / <DjArtimus>, a Full-Stack Developer specializing in creating dynamic, responsive, and scalable web applications. Discover innovative projects, cutting-edge skills, and a passion for solving complex problems with modern technologies like Next.js, MERN stack, and Supabase. Let's collaborate to turn ideas into impactful solutions!",
-  keywords: ["Full-Stack Developer", "Next.js", "MERN Stack", "Supabase" , "Frontend Developer" , "DjArtimus", "Pratik"],
+  title: "DjArtimus's Portfolio",
+  description: "Explore the portfolio of Pratik / DjArtimus, a Full-Stack Developer specializing in creating dynamic, responsive, and scalable web applications. Discover innovative projects, cutting-edge skills, and a passion for solving complex problems with modern technologies like Next.js, MERN stack, and Supabase. Let's collaborate to turn ideas into impactful solutions!",
+  keywords: ["Full-Stack Developer", "Next.js", "Next.js Developer" , "MERN Stack", "MERN Stack Developer", "Supabase" , "Frontend Developer" , "DjArtimus", "Pratik", "Pratik Pansare"],
   icons: {
     icon: "/favicon.ico",
     apple: '/icons/apple-touch-icon.png'

@@ -7,7 +7,7 @@ const Logo = () => {
 
   const controlLogo = () => {
     if (typeof window !== "undefined") {
-      if (window.scrollY > 20) {
+      if (window.scrollY > 30) {
         // if scroll down hide the logo
         setIsVisible(false);
       } else {
@@ -31,10 +31,10 @@ const Logo = () => {
 
   return (
     <div
-      className={`fixed h-fit w-fit z-50 right-0 top-0 sm:right-auto sm:left-0 transition-all duration-500 ${
+      className={`w-full md:w-fit sticky h-0 xl:max-w-6xl z-50 right-0 top-0 2xl:mx-auto flex justify-end md:justify-start 2xl:w-auto transition-all duration-500 ${
         isVisible
-          ? " -translate-x-[6vw] translate-y-[5vh] text-[11vw] rotate-6 sm:-rotate-6 sm:translate-x-[7vw] sm:translate-y-[8vh] lg:translate-x-[12vw] lg:text-[3.5vw]"
-          : " text-[5vw] -translate-y-0 -translate-x-[5vw] sm:translate-x-[5vw] lg:text-[2vw] lg:translate-x-[9vw] rotate-0"
+          ? " -translate-x-4 translate-y-6 sm1:-translate-x-20 md:translate-x-20 lg:translate-x-18 lg:translate-y-16 xl:translate-x-28 2xl:translate-x-8 2xl:translate-y-5 text-[11vw] rotate-6 md:-rotate-6 sm1:text-5xl md:text-6xl lg:text-5xl"
+          : "text-xl xs2:text-2xl rotate-0 -translate-x-4 sm1:-translate-x-20 md:translate-x-20 lg:translate-x-16 xl:translate-x-28 2xl:translate-x-10"
       }`}
     >
       <motion.h1

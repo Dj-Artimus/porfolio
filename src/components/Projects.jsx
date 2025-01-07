@@ -95,10 +95,12 @@ const ProjectCard = ({ title, description, points, tags, links }) => (
         {title}
       </h3>
       <div className="flex flex-col lg:flex-row justify-end items-center gap-2 lg:gap-4 text-2xl ">
-        <Link href={links.liveDemo} className="hover:text-blue-700 dark:hover:text-blue-400 hover:scale-125 inline-block" >
+        <Link href={links.liveDemo}
+        target="_blank"  className="hover:text-blue-700 dark:hover:text-blue-400 hover:scale-125 inline-block" >
           <FaExternalLinkAlt />
         </Link>
-        <Link href={links.github} className="hover:text-blue-700 dark:hover:text-blue-400 hover:scale-125 inline-block" >
+        <Link href={links.github} 
+        target="_blank" className="hover:text-blue-700 dark:hover:text-blue-400 hover:scale-125 inline-block" >
         <FaGithub />
         </Link>
       </div>

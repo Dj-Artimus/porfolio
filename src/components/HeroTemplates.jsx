@@ -7,7 +7,7 @@ export const HeroContentTemplate = ({ key, sHeading, bHeading, mHeading }) => {
       <AnimatePresence mode="wait">
         <motion.h1
           key={key}
-          className="text-[6vw] sm:text-[5.5vw] lg:text-[2.5vw] font-bold"
+          className=" text-[7vw] xs3:text-3xl md:text-5xl lg:text-4xl font-bold"
           initial={{ opacity: 0, y: -50 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
@@ -18,7 +18,7 @@ export const HeroContentTemplate = ({ key, sHeading, bHeading, mHeading }) => {
       <AnimatePresence mode="wait">
         <motion.h1
           key={key}
-          className="text-[14vw] sm:text-[12vw] lg:text-[7vw] font-bold leading-none"
+          className=" text-[15vw] xs3:text-6xl md:text-8xl lg:text-7xl xl:text-8xl font-bold leading-none my-1 md:my-3"
           initial={{ opacity: 0, y: -50 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.5 }}
@@ -29,7 +29,7 @@ export const HeroContentTemplate = ({ key, sHeading, bHeading, mHeading }) => {
       <AnimatePresence mode="wait">
         <motion.div
           key={key}
-          className=" text-[7vw] lg:text-[3.3vw] w-fit h-[6vh] text-gray-800 dark:text-gray-300 hover:text-blue-700 dark:hover:text-blue-500 hover:font-bold"
+          className=" w-fit text-[7vw] xs3:text-[33px] md:text-5xl lg:text-4xl xl:text-5xl text-gray-800 dark:text-gray-300 hover:text-blue-700 dark:hover:text-blue-500 hover:font-bold"
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ delay: 1.5, duration: 1 }}
@@ -51,7 +51,7 @@ export const HeroImageTemplate = ({ imageKey, src }) => {
         transition={{ duration: 0.5 }}
         src={src}
         alt={imageKey}
-        className="w-[50vw] sm:w-[35vw] lg:w-[13.5vw] aspect-[16/9] object-cover rounded-[4vw] lg:rounded-[1.6vw] dark:bg-black p-[2.3vw] sm:p-[1.7vw] lg:p-[0.75vw] lg:hover:p-[0.5vw] transition-all duration-300"
+        className=" w-44 xs2:w-48 xs3:w-52 md:w-64 lg:w-52 aspect-[16/9] object-cover rounded-xl md:rounded-3xl dark:bg-black p-2 lg:p-[10px] lg:hover:p-2 transition-all duration-300"
       />
     </AnimatePresence>
   );

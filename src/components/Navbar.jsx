@@ -57,84 +57,86 @@ const Navbar = ({ onThemeToggle, isDarkMode, onMusicToggle, isMusicOn }) => {
   ];
 
   return (
-    <nav
-      className={`w-full text-black dark:text-white lg:w-fit fixed right-0 bottom-0 lg:bottom-auto lg:top-0 z-50 flex flex-col items-center  transition-transform duration-300 lg:-translate-x-[12vw] ${
-        isVisible
-          ? "translate-y-0 lg:translate-y-[0.9vh]"
-          : " translate-y-full lg:-translate-y-full"
-      }`}
-    >
-      <div className="flex items-center sm:px-2 w-full sm:w-fit justify-around overflow-y-auto border border-gray-600 dark:bg-black bg-opacity-50 lg:bg-opacity-5 backdrop-blur-xl rounded-t-[3vw] lg:rounded-full">
-        {sections.map((section) => (
-          <Link
-            key={section.name}
-            activeClass="text-sky-500 underline underline-offset-4"
-            to={section.name}
-            spy={true}
-            smooth={true}
-            duration={500}
-            onClick={() =>
-              section.name === "settings" && setIsSettingsOpen(!isSettingsOpen)
-            }
-            className="cursor-pointer w-full hover:text-sky-400 text-xs py-2 p-1 sm:px-3 lg:py-1 lg:text-base flex flex-col gap-1 items-center bor der transition-all duration-300"
-          >
-            <span className="text-2xl lg:hidden">{section.icon}</span>
-            {section.name.charAt(0).toUpperCase() + section.name.slice(1)}
-          </Link>
-        ))}
-        <div className="relative">
-          {isSettingsOpen && (
-            <div
-              ref={settingsRef}
-              className="absolute right-0 bottom-4 lg:bottom-auto lg:top-3 mt-2 w-48 bg-white dark:bg-gray-900 border border-gray-700 dark:border-gray-300 rounded-lg shadow-lg p-3"
+    <div className="fixed right-0 bottom-0 lg:bottom-auto lg:top-0 z-50 w-full flex justify-center pointer-events-none">
+      <nav
+        className={`w-full lg:max-w-6xl text-black dark:text-white flex sm:justify-center lg:justify-end lg:pe-14 transition-transform duration-300 ${
+          isVisible
+            ? "translate-y-0 lg:translate-y-[6px]"
+            : " translate-y-full lg:-translate-y-full"
+        } `}
+      >
+        <div className="flex items-center w-full sm:w-fit justify-around border border-gray-600 dark:bg-black dark:bg-opacity-30 lg:bg-opacity-5 backdrop-blur-xl rounded-t-2xl lg:rounded-full pointer-events-auto">
+          {sections.map((section) => (
+            <Link
+              key={section.name}
+              activeClass="text-sky-500 underline underline-offset-4"
+              to={section.name}
+              spy={true}
+              smooth={true}
+              duration={500}
+              onClick={() =>
+                section.name === "settings" && setIsSettingsOpen(!isSettingsOpen)
+              }
+              className="cursor-pointer w-full hover:text-sky-400 text-xs py-2 p-1 sm:px-3 lg:py-1 lg:text-base flex flex-col gap-1 items-center bor der transition-all duration-300"
             >
-              <div className="flex justify-between items-center mb-1">
-                <div className="flex gap-3 items-center text-lg font-bold">
-                  <LuSettings2 />
-                  <h2 className="">Settings</h2>
+              <span className="text-2xl lg:hidden">{section.icon}</span>
+              {section.name.charAt(0).toUpperCase() + section.name.slice(1)}
+            </Link>
+          ))}
+          <div className="relative">
+            {isSettingsOpen && (
+              <div
+                ref={settingsRef}
+                className="absolute right-0 bottom-4 lg:bottom-auto lg:top-3 mt-2 w-48 bg-white dark:bg-gray-900 border border-gray-700 dark:border-gray-300 rounded-lg shadow-lg p-3"
+              >
+                <div className="flex justify-between items-center mb-1">
+                  <div className="flex gap-3 items-center text-lg font-bold">
+                    <LuSettings2 />
+                    <h2 className="">Settings</h2>
+                  </div>
+                  <button
+                    onClick={() => setIsSettingsOpen(false)}
+                    className="text-gray-500 hover:text-gray-700 dark:hover:text-gray-300 text-2xl"
+                  >
+                    <IoClose />
+                  </button>
                 </div>
-                <button
-                  onClick={() => setIsSettingsOpen(false)}
-                  className="text-gray-500 hover:text-gray-700 dark:hover:text-gray-300 text-2xl"
-                >
-                  <IoClose />
-                </button>
+                <div className="flex items-center gap-4 my-3">
+                  <FaMoon className="text-gray-500" />
+                  <span>Dark Mode</span>
+                  <ReactSwitch
+                    onChange={onThemeToggle}
+                    checked={isDarkMode}
+                    onColor="#3b82f6" // Tailwind's blue-500 color
+                    offColor="#ccc"
+                    uncheckedIcon={false}
+                    checkedIcon={false}
+                    height={20}
+                    width={40}
+                    handleDiameter={16}
+                  />
+                </div>
+                <div className="flex items-center gap-4">
+                  <FaMusic className="text-gray-500" />
+                  <span>Music</span>
+                  <ReactSwitch
+                    onChange={onMusicToggle}
+                    checked={isMusicOn}
+                    onColor="#3b82f6" // Tailwind's blue-500 color
+                    offColor="#ccc"
+                    uncheckedIcon={false}
+                    checkedIcon={false}
+                    height={20}
+                    width={40}
+                    handleDiameter={20}
+                  />
+                </div>
               </div>
-              <div className="flex items-center gap-4 my-3">
-                <FaMoon className="text-gray-500" />
-                <span>Dark Mode</span>
-                <ReactSwitch
-                  onChange={onThemeToggle}
-                  checked={isDarkMode}
-                  onColor="#3b82f6" // Tailwind's blue-500 color
-                  offColor="#ccc"
-                  uncheckedIcon={false}
-                  checkedIcon={false}
-                  height={20}
-                  width={40}
-                  handleDiameter={16}
-                />
-              </div>
-              <div className="flex items-center gap-4">
-                <FaMusic className="text-gray-500" />
-                <span>Music</span>
-                <ReactSwitch
-                  onChange={onMusicToggle}
-                  checked={isMusicOn}
-                  onColor="#3b82f6" // Tailwind's blue-500 color
-                  offColor="#ccc"
-                  uncheckedIcon={false}
-                  checkedIcon={false}
-                  height={20}
-                  width={40}
-                  handleDiameter={20}
-                />
-              </div>
-            </div>
-          )}
+            )}
+          </div>
         </div>
-      </div>
-    </nav>
+      </nav>
+    </div>
 
 
   );
