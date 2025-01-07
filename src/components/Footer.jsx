@@ -2,7 +2,7 @@ import { FaGithub, FaLinkedin } from 'react-icons/fa';
 import { FaSquareXTwitter } from 'react-icons/fa6';
 
 const Footer = () => (
-  <footer className="bg-gray-200 dark:bg-gray-900 text-gray-800 dark:text-gray-300 py-8">
+  <footer className="bg-gray-200 dark:bg-gray-900 text-gray-800 dark:text-gray-300 py-8 px-3 sm:px-14">
     <div className="container mx-auto text-center">
       <h2 className="text-2xl font-bold text-primary dark:text-white mb-4">
         Let’s Connect!
@@ -39,7 +39,7 @@ const Footer = () => (
       </div>
       {/* Footer Bottom */}
       <p className="text-sm">
-        © {new Date().getFullYear()} DjArtimus's Portfolio. Built with Love ❤.
+        © {new Date().getFullYear()} DjArtimus's Portfolio ❤.
       </p>
     </div>
   </footer>

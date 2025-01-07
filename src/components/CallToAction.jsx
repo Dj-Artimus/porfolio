@@ -4,7 +4,7 @@ import { motion } from "framer-motion";
 import Link from "next/link";
 
 const CallToAction = ({ isDark }) => (
-  <section className="py-16 px-6 bg-white dark:bg-black dark:text-white text-black text-center">
+  <section className="py-16 px-6 sm:px-14 bg-white dark:bg-black dark:text-white text-black text-center">
     <div className="mx-auto max-w-3xl lg:max-w-5xl flex flex-col-reverse lg:flex-row gap-6">
       <motion.div
         initial={{ opacity: 0, y: 50 }}
@@ -15,7 +15,7 @@ const CallToAction = ({ isDark }) => (
         <HeroVideoTemplate
           videoKey="workingOnPc_darkMode"
           src={`./videos/WorkingOnPC_${isDark ? "darkMode" : "lightMode"}.mp4`}
-          styles="h-full"
+          styles="h-full max-h-[300px] sm:max-h-[400px] lg:max-h-[500px] "
           loop={true}
         />
       </motion.div>

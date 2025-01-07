@@ -5,7 +5,7 @@ import { motion } from "framer-motion";
 const AboutSection = ({ isDark }) => (
   <section
     id="about"
-    className="py-16 px-6 bg-white dark:bg-black text-gray-800 dark:text-gray-200"
+    className="py-16 px-6 sm:px-14 bg-white dark:bg-black text-gray-800 dark:text-gray-200"
   >
     <div className="mx-auto max-w-3xl lg:max-w-5xl flex flex-col-reverse lg:flex-row gap-6">
       <motion.div
@@ -17,7 +17,7 @@ const AboutSection = ({ isDark }) => (
         <HeroVideoTemplate
           videoKey="TalkingAbout_darkMode"
           src={`./videos/TalkingAbout_${isDark ? "darkMode" : "lightMode"}.mp4`}
-          styles=" max-h-[500px] border border-white dark:border-black rounded-xl"
+          styles=" max-h-[350px] sm:max-h-[500px] rounded-xl"
           loop={true}
         />
       </motion.div>

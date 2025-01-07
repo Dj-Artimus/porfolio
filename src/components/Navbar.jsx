@@ -58,13 +58,13 @@ const Navbar = ({ onThemeToggle, isDarkMode, onMusicToggle, isMusicOn }) => {
 
   return (
     <nav
-      className={`w-full text-black dark:text-white lg:w-fit fixed right-0 bottom-0 lg:bottom-auto lg:top-0 z-50 border border-gray-600 flex flex-col items-center dark:bg-black bg-opacity-50 lg:bg-opacity-5 backdrop-blur-xl rounded-t-[3vw] lg:rounded-full transition-transform duration-300 lg:-translate-x-[12vw] ${
+      className={`w-full text-black dark:text-white lg:w-fit fixed right-0 bottom-0 lg:bottom-auto lg:top-0 z-50 flex flex-col items-center  transition-transform duration-300 lg:-translate-x-[12vw] ${
         isVisible
           ? "translate-y-0 lg:translate-y-[0.9vh]"
           : " translate-y-full lg:-translate-y-full"
       }`}
     >
-      <div className="flex gap-[1vw] items-center px-[1vw] w-full lg:w-fit justify-between">
+      <div className="flex items-center sm:px-2 w-full sm:w-fit justify-around overflow-y-auto border border-gray-600 dark:bg-black bg-opacity-50 lg:bg-opacity-5 backdrop-blur-xl rounded-t-[3vw] lg:rounded-full">
         {sections.map((section) => (
           <Link
             key={section.name}
@@ -76,9 +76,9 @@ const Navbar = ({ onThemeToggle, isDarkMode, onMusicToggle, isMusicOn }) => {
             onClick={() =>
               section.name === "settings" && setIsSettingsOpen(!isSettingsOpen)
             }
-            className="cursor-pointer hover:text-sky-400 text-[3vw] p-[1.5vw] lg:p-0 lg:py-[0.3vh] lg:text-[1.2vw] flex flex-col gap-[0.4vw] items-center transition-all duration-300"
+            className="cursor-pointer w-full hover:text-sky-400 text-xs py-2 p-1 sm:px-3 lg:py-1 lg:text-base flex flex-col gap-1 items-center bor der transition-all duration-300"
           >
-            <span className="text-[6vw] lg:hidden">{section.icon}</span>
+            <span className="text-2xl lg:hidden">{section.icon}</span>
             {section.name.charAt(0).toUpperCase() + section.name.slice(1)}
           </Link>
         ))}
@@ -86,21 +86,21 @@ const Navbar = ({ onThemeToggle, isDarkMode, onMusicToggle, isMusicOn }) => {
           {isSettingsOpen && (
             <div
               ref={settingsRef}
-              className="absolute right-0 bottom-[4vh] lg:bottom-auto lg:top-[1.2vh] mt-2 w-[45vw] lg:w-[16vw] bg-white dark:bg-gray-900 border border-gray-700 dark:border-gray-300 rounded-lg shadow-lg p-[2vw] lg:p-[1.2vw]"
+              className="absolute right-0 bottom-4 lg:bottom-auto lg:top-3 mt-2 w-48 bg-white dark:bg-gray-900 border border-gray-700 dark:border-gray-300 rounded-lg shadow-lg p-3"
             >
-              <div className="flex justify-between items-center mb-4">
-                <div className="flex gap-[2vw] lg:gap-[1vw] items-center text-[5.5vw] lg:text-[1.4vw] font-bold">
+              <div className="flex justify-between items-center mb-1">
+                <div className="flex gap-3 items-center text-lg font-bold">
                   <LuSettings2 />
                   <h2 className="">Settings</h2>
                 </div>
                 <button
                   onClick={() => setIsSettingsOpen(false)}
-                  className="text-gray-500 hover:text-gray-700 dark:hover:text-gray-300 lg:text-[1.9vw] text-[7vw]"
+                  className="text-gray-500 hover:text-gray-700 dark:hover:text-gray-300 text-2xl"
                 >
                   <IoClose />
                 </button>
               </div>
-              <div className="flex items-center gap-[2vw] lg:gap-[1vw] mb-[2vh]">
+              <div className="flex items-center gap-4 my-3">
                 <FaMoon className="text-gray-500" />
                 <span>Dark Mode</span>
                 <ReactSwitch
@@ -115,7 +115,7 @@ const Navbar = ({ onThemeToggle, isDarkMode, onMusicToggle, isMusicOn }) => {
                   handleDiameter={16}
                 />
               </div>
-              <div className="flex items-center gap-[2vw] lg:gap-[1vw]">
+              <div className="flex items-center gap-4">
                 <FaMusic className="text-gray-500" />
                 <span>Music</span>
                 <ReactSwitch
@@ -135,6 +135,8 @@ const Navbar = ({ onThemeToggle, isDarkMode, onMusicToggle, isMusicOn }) => {
         </div>
       </div>
     </nav>
+
+
   );
 };
 

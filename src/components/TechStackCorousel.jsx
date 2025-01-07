@@ -112,7 +112,7 @@ const techStack = [
 const TechStackCarousel = () => (
   <section
     id="skills"
-    className="py-16 bg-gray-100 dark:bg-gray-900 text-center"
+    className="py-16 sm:px-14 bg-gray-100 dark:bg-gray-900 text-center"
   >
     <h2 className="text-4xl font-bold text-primary dark:text-white mb-8">
       My Tech Stack

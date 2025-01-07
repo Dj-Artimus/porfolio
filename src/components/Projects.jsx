@@ -126,8 +126,8 @@ const ProjectCard = ({ title, description, points, tags, links }) => (
 );
 
 const Projects = () => (
-  <section id="projects" className="py-16 px-8 bg-gray-100 dark:bg-gray-900">
-    <div className="container mx-auto max-w-3xl 2xl:max-w-5xl">
+  <section id="projects" className="py-16 px-8 sm:px-14 bg-gray-100 dark:bg-gray-900">
+    <div className="container mx-auto lg:max-w-4xl xl:max-w-5xl">
       <h2 className="text-4xl font-bold mb-8 text-center">My Projects</h2>
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
         {projects.map((project, idx) => (
