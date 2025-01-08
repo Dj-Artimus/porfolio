@@ -16,48 +16,12 @@ import Link from "next/link";
 import { FaGithubSquare, FaLinkedin, FaYoutubeSquare } from "react-icons/fa";
 import { FaSquareXTwitter } from "react-icons/fa6";
 import { ImProfile } from "react-icons/im";
-import Logo from "./Logo";
 
-const HeroSection = ({ setIsLoading, isDark, isMusicOn }) => {
+const HeroSection = ({ isDark, isMusicOn }) => {
   // const [isMusicOn, setIsMusicOn] = useState(false);
   const [isActionModelHover, setIsActionModelHover] = useState(false);
   const [isNameHover, setIsNameHover] = useState(false);
   const [currentHeroContent, setCurrentHeroContent] = useState(0);
-
-  const assets = [
-    `./videos/SayingHi_${isDark ? "darkMode" : "lightMode"}.mp4`,
-    `./videos/PlayingGuitar_${isDark ? "darkMode" : "lightMode"}.mp4`,
-    `./videos/WorkingOnLaptop_${isDark ? "darkMode" : "lightMode"}.mp4`,
-    "./images/helloWorld.gif",
-    "./images/responsiveDesigner.gif",
-    "./images/continuousDev.gif",
-    "./images/timeMoney.gif",
-    "./images/ideasToReality.gif",
-  ];
-
-  useEffect(() => {
-    const preloadAssets = async () => {
-      const promises = assets.map((asset) => {
-        return new Promise((resolve, reject) => {
-          const isVideo = asset.endsWith(".mp4");
-          const element = isVideo
-            ? document.createElement("video")
-            : new Image();
-          element.src = asset;
-          element.onload = resolve;
-          element.onerror = reject;
-          if (isVideo) {
-            element.onloadeddata = resolve;
-          }
-        });
-      });
-
-      await Promise.all(promises);
-      setIsLoading(false);
-    };
-
-    preloadAssets();
-  }, []);
 
   const HeroContent = useCallback(
     (isNameHover, setIsNameHover) => [

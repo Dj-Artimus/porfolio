@@ -87,7 +87,7 @@ const Navbar = ({ onThemeToggle, isDarkMode, onMusicToggle, isMusicOn }) => {
             {isSettingsOpen && (
               <div
                 ref={settingsRef}
-                className="absolute right-0 bottom-4 lg:bottom-auto lg:top-3 mt-2 w-48 bg-white dark:bg-gray-900 border border-gray-700 dark:border-gray-300 rounded-lg shadow-lg p-3"
+                className="absolute right-2 bottom-10 lg:bottom-auto lg:top-3 mt-2 w-48 bg-white dark:bg-gray-900 border border-gray-700 dark:border-gray-300 rounded-lg shadow-lg p-3"
               >
                 <div className="flex justify-between items-center mb-1">
                   <div className="flex gap-3 items-center text-lg font-bold">
@@ -128,7 +128,7 @@ const Navbar = ({ onThemeToggle, isDarkMode, onMusicToggle, isMusicOn }) => {
                     checkedIcon={false}
                     height={20}
                     width={40}
-                    handleDiameter={20}
+                    handleDiameter={16}
                   />
                 </div>
               </div>
