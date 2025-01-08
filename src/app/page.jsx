@@ -55,10 +55,6 @@ const Home = () => {
 
   
   const assets = [
-    `./videos/SayingHi_lightMode.mp4`,
-    `./videos/PlayingGuitar_lightMode.mp4`,
-    `./videos/WorkingOnLaptop_lightMode.mp4`,
-    `./videos/TalkingAbout_lightMode.mp4`,
     `./videos/SayingHi_darkMode.mp4`,
     `./videos/PlayingGuitar_darkMode.mp4`,
     `./videos/WorkingOnLaptop_darkMode.mp4`,

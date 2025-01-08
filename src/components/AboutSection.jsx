@@ -16,7 +16,7 @@ const AboutSection = ({ isDark }) => (
       >
         <HeroVideoTemplate
           videoKey="TalkingAbout_darkMode"
-          src={`./videos/TalkingAbout_${isDark ? "darkMode" : "lightMode"}.mp4`}
+          src={`./videos/TalkingAbout_${isDark ? "DarkMode" : "lightMode"}.mp4`}
           styles=" max-h-[350px] sm:max-h-[500px] rounded-xl"
           loop={true}
         />
