@@ -2,12 +2,10 @@ import {
   FaBootstrap,
   FaCss3Alt,
   FaDatabase,
-  FaGit,
   FaGitAlt,
   FaGithub,
   FaHtml5,
   FaJs,
-  FaMicrosoft,
   FaNodeJs,
   FaReact,
 } from "react-icons/fa";
@@ -30,6 +28,9 @@ import {
   TbBrandVercelFilled,
   TbBrandVscode,
 } from "react-icons/tb";
+
+import { motion } from 'framer-motion';
+
 const techStack = [
   // Front-End
   { name: "HTML5", icon: <FaHtml5 size="40" className="text-orange-600" /> },
@@ -119,10 +120,17 @@ const TechStackCarousel = () => (
     </h2>
     <div className=" max-w-4xl xl:max-w-6xl container mx-auto grid grid-cols-3 md:grid-cols-6 gap-8">
       {techStack.map((tech, idx) => (
-        <div key={idx} className="p-4 flex flex-col items-center">
+        <motion.div
+          initial={{ opacity: 0, y: 40 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6, delay: idx * 0.075}}
+          key={idx}
+          className="p-4 flex flex-col items-center"
+        >
           {tech.icon}
           <p className="mt-2 text-primary dark:text-gray-400">{tech.name}</p>
-        </div>
+        </motion.div>
       ))}
     </div>
   </section>

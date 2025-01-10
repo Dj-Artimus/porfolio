@@ -1,5 +1,6 @@
 import { FaGithub, FaLinkedin } from 'react-icons/fa';
 import { FaSquareXTwitter } from 'react-icons/fa6';
+import { RiMailFill } from "react-icons/ri";
 
 const Footer = () => (
   <footer className="bg-gray-200 dark:bg-gray-900 text-gray-800 dark:text-gray-300 py-8 px-3 sm:px-14">
@@ -12,6 +13,14 @@ const Footer = () => (
       </p>
       {/* Social Links */}
       <div className="flex justify-center gap-6 mb-8">
+        <a
+          href="mailto:pratik.s.pansare.in@gmail.com"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="text-gray-800 -mt-[1px] dark:text-gray-300 hover:text-primary transition"
+        >
+          <RiMailFill size="32"/>
+        </a>
         <a
           href="https://github.com/Dj-Artimus"
           target="_blank"

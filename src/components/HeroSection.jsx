@@ -1,10 +1,4 @@
-import React, {
-  Suspense,
-  useCallback,
-  useEffect,
-  useRef,
-  useState,
-} from "react";
+import React, { useCallback, useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
 import { Typewriter } from "react-simple-typewriter"; // Already installed
 import {
@@ -13,9 +7,11 @@ import {
   HeroVideoTemplate,
 } from "./HeroTemplates";
 import Link from "next/link";
-import { FaGithubSquare, FaLinkedin, FaYoutubeSquare } from "react-icons/fa";
+import { FaGithubSquare, FaLinkedin } from "react-icons/fa";
+import { RiMailFill } from "react-icons/ri";
 import { FaSquareXTwitter } from "react-icons/fa6";
 import { ImProfile } from "react-icons/im";
+import SongCredit from "./SongCredit";
 
 const HeroSection = ({ isDark, isMusicOn }) => {
   // const [isMusicOn, setIsMusicOn] = useState(false);
@@ -122,7 +118,7 @@ const HeroSection = ({ isDark, isMusicOn }) => {
             key={"responsiveDesign"}
             sHeading="I craft"
             bHeading="Responsive"
-            mHeading="Magic in Every Pixel"
+            mHeading="user-centric designs"
           />
         ),
         image: (
@@ -152,7 +148,7 @@ const HeroSection = ({ isDark, isMusicOn }) => {
         content: (
           <HeroContentTemplate
             key={"timeMoney"}
-            sHeading="Respecting"
+            sHeading="Respect"
             bHeading="Your Time"
             mHeading="and Investment"
           />
@@ -257,7 +253,7 @@ const HeroSection = ({ isDark, isMusicOn }) => {
               </a>
               <Link
                 href={
-                  "https://drive.google.com/file/d/1tfZankoER687X23j0JZ9BVZwov_wSYPj/view?usp=drivesdk"
+                  "https://drive.google.com/file/d/1Hb4m1rKXLTYp2ANH8dVv2zvQrOyQiD_Q/view?usp=drivesdk"
                 }
                 target="_blank"
                 className="text-lg md:text-2xl w-full px-2 py-1 md:px-4 md:py-3 text-center border border-gray-900 dark:border-gray-200 rounded-xl hover:text-blue-600 dark:hover:text-blue-300 hover:font-bold hover:shadow-blue-500 inline-block hover:scale-110 font-semibold shadow-md transition-all duration-200 active:scale-100"
@@ -267,11 +263,11 @@ const HeroSection = ({ isDark, isMusicOn }) => {
             </div>
             <div className=" w-fit mx-auto grid grid-cols-2 gap-4 place-items-center bo rder ">
               <Link
-                href="https://github.com/Dj-Artimus"
+                href="mailto:pratik.s.pansare.in@gmail.com"
                 target="_blank"
-                className=" text-4xl md:text-6xl border border-gray-900 dark:border-gray-200 transform origin-center rounded-full hover:font-bold hover:shadow-blue-500 hover:scale-125 font-semibold shadow-md transition-all active:scale-100"
+                className="text-4xl md:text-6xl border border-gray-900 dark:border-gray-200 transform origin-center rounded-full hover:font-bold hover:shadow-blue-500 hover:scale-125 font-semibold shadow-md transition-all active:scale-100"
               >
-                <FaGithubSquare />
+                <RiMailFill className=" scale-[1.1]" />
               </Link>
               <Link
                 href="https://www.linkedin.com/in/pratikpansare"
@@ -281,11 +277,11 @@ const HeroSection = ({ isDark, isMusicOn }) => {
                 <FaLinkedin />
               </Link>
               <Link
-                href="https://youtube.com/@djartimus?si=J16h2VNskYw0YbHz"
+                href="https://github.com/Dj-Artimus"
                 target="_blank"
-                className="text-4xl md:text-6xl border border-gray-900 dark:border-gray-200 transform origin-center rounded-full hover:font-bold hover:shadow-blue-500 hover:scale-125 font-semibold shadow-md transition-all active:scale-100"
+                className=" text-4xl md:text-6xl border border-gray-900 dark:border-gray-200 transform origin-center rounded-full hover:font-bold hover:shadow-blue-500 hover:scale-125 font-semibold shadow-md transition-all active:scale-100"
               >
-                <FaYoutubeSquare />
+                <FaGithubSquare />
               </Link>
               <Link
                 href="https://x.com/Dj_Artimus?t=0HK49JZRYxEmeqWiD5M9yQ&s=09"
@@ -326,14 +322,15 @@ const HeroSection = ({ isDark, isMusicOn }) => {
                     Contact Me
                   </a>
                 </div>
-                <div className=" w-full flex items-center gap-6 bo rder">
+                <div className=" w-full flex items-center gap-6">
                   <Link
-                    href="https://github.com/Dj-Artimus"
+                    href="mailto:pratik.s.pansare.in@gmail.com"
                     target="_blank"
-                    className=" text-[40px] border transform origin-center rounded-full hover:font-bold hover:shadow-blue-500 hover:scale-110 font-semibold shadow-md transition-all active:scale-100"
+                    className="  text-[40px] border transform origin-center flex-shrink-0 rounded-full hover:font-bold hover:shadow-blue-500 hover:scale-110 font-semibold shadow-md transition-all active:scale-100"
                   >
-                    <FaGithubSquare />
+                    <RiMailFill className="scale-[1.11]" />
                   </Link>
+
                   <Link
                     href="https://www.linkedin.com/in/pratikpansare"
                     target="_blank"
@@ -342,11 +339,11 @@ const HeroSection = ({ isDark, isMusicOn }) => {
                     <FaLinkedin />
                   </Link>
                   <Link
-                    href="https://youtube.com/@djartimus?si=J16h2VNskYw0YbHz"
+                    href="https://github.com/Dj-Artimus"
                     target="_blank"
-                    className="  text-[40px] border transform origin-center flex-shrink-0 rounded-full hover:font-bold hover:shadow-blue-500 hover:scale-110 font-semibold shadow-md transition-all active:scale-100"
+                    className=" text-[40px] border transform origin-center rounded-full hover:font-bold hover:shadow-blue-500 hover:scale-110 font-semibold shadow-md transition-all active:scale-100"
                   >
-                    <FaYoutubeSquare />
+                    <FaGithubSquare />
                   </Link>
                   <Link
                     href="https://x.com/Dj_Artimus?t=0HK49JZRYxEmeqWiD5M9yQ&s=09"
@@ -384,7 +381,7 @@ const HeroSection = ({ isDark, isMusicOn }) => {
           >
             <Link
               href={
-                "https://drive.google.com/file/d/1tfZankoER687X23j0JZ9BVZwov_wSYPj/view?usp=drivesdk"
+                "https://drive.google.com/file/d/1Hb4m1rKXLTYp2ANH8dVv2zvQrOyQiD_Q/view?usp=drivesdk"
               }
               target="_blank"
               className="flex items-center gap-2 border rounded-full p-4 py-2 text-xl hover:text-blue-300 hover:font-bold hover:shadow-blue-500 hover:scale-110 shadow-md transition-all duration-200 active:scale-100"
@@ -394,6 +391,11 @@ const HeroSection = ({ isDark, isMusicOn }) => {
             </Link>
           </motion.div>
         </div>
+        {isMusicOn && (
+          <div className="absolute bottom-0 right-2 text-xs lg:text-lg lg:right-auto lg:left-[5%]">
+            <SongCredit />{" "}
+          </div>
+        )}
       </div>
     </section>
   );

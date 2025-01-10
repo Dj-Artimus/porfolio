@@ -12,23 +12,24 @@ import ContactSection from "@/components/ContactSection";
 import Projects from "@/components/Projects";
 import Logo from "@/components/Logo";
 import LoadingModal from "@/components/LoadingModal";
+import HighlightSection from "@/components/HighlightSection";
 
 const Home = () => {
-  const [isDark, setDark] = useState(false);
+  const [isDark, setDark] = useState(true);
   const [isMusicOn, setIsMusicOn] = useState(false);
   const [isLoading, setIsLoading] = useState(true);
   const [loadingProgress, setLoadingProgress] = useState(0);
   const audioRef = useRef(null);
 
-  useEffect(() => {
-    const storedTheme = localStorage.getItem("theme");
-    if (storedTheme) {
-      setDark(storedTheme === "dark");
-    } else {
-      const userPrefersDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
-      setDark(userPrefersDark);
-    }
-  }, []);
+  // useEffect(() => {
+  //   const storedTheme = localStorage.getItem("theme");
+  //   if (storedTheme) {
+  //     setDark(storedTheme === "dark");
+  //   } else {
+  //     const userPrefersDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
+  //     setDark(userPrefersDark);
+  //   }
+  // }, []);
 
   const toggleTheme = () => {
     setDark((prev) => {
@@ -126,7 +127,7 @@ const Home = () => {
         <HeroSection isDark={isDark} isMusicOn={isMusicOn} />
         <TechStackCarousel />
         {/* <HomeSection /> */}
-        {/* <HighlightSection /> */}
+        <HighlightSection />
         <CallToAction isDark={isDark} />
         <Projects />
         <AboutSection isDark={isDark} />

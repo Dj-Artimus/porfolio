@@ -4,12 +4,13 @@ import { motion } from "framer-motion";
 import Link from "next/link";
 
 const CallToAction = ({ isDark }) => (
-  <section className="py-16 px-6 sm:px-14 bg-white dark:bg-black dark:text-white text-black text-center">
+  <section className="py-16 px-7 sm:px-14 bg-white dark:bg-black dark:text-white text-black text-center">
     <div className="mx-auto max-w-3xl lg:max-w-5xl flex flex-col-reverse lg:flex-row gap-6">
       <motion.div
         initial={{ opacity: 0, y: 50 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.6, delay: 0.5 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{once: true}}
+        transition={{ duration: 0.7, delay: 0.5 }}
         className=" w-full lg:w-1/2 flex justify-center items-center"
       >
         <HeroVideoTemplate
@@ -71,7 +72,7 @@ const CallToAction = ({ isDark }) => (
             Contact Me
           </a>
           <Link
-            href={"https://drive.google.com/file/d/1tfZankoER687X23j0JZ9BVZwov_wSYPj/view?usp=drivesdk"}
+            href={"https://drive.google.com/file/d/1Hb4m1rKXLTYp2ANH8dVv2zvQrOyQiD_Q/view?usp=drivesdk"}
             target="_blank"
             className="px-6 py-2 border border-gray-700 rounded-xl dark:border-gray-200 hover:text-blue-600 dark:hover:text-blue-400 hover:font-bold transition hover:scale-110"
           >

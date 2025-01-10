@@ -23,7 +23,7 @@ const LoadingModal = ({
             alt="Loading"
             className="w-full max-w-3xl h-auto aspect-[16/9] mb-4 rounded-2xl border"
           />
-          <div className="w-full bg-gray-200 rounded-full h-4 relative">
+          <div className="w-full bg-gray-500 rounded-full h-4 relative">
             <div
               className="bg-blue-600 h-4 rounded-full"
               style={{ width: `${loadingProgress}%` }}
@@ -71,7 +71,7 @@ const LoadingModal = ({
               />
             </div>
           </div>
-          <p className="text-xs text-gray-600 mt-3 text-center mx-5" >You can also toggle these options later in settings menu.</p>
+          <p className="text-xs text-gray-600 mt-3 text-center mx-5" >You can also toggle this options later in settings menu.</p>
           <div
             onClick={() => {
               setIsLoading(false);

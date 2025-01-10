@@ -5,18 +5,19 @@ import { motion } from "framer-motion";
 const AboutSection = ({ isDark }) => (
   <section
     id="about"
-    className="py-16 px-6 sm:px-14 bg-white dark:bg-black text-gray-800 dark:text-gray-200"
+    className="py-16 px-7 sm:px-14 bg-white dark:bg-black text-gray-800 dark:text-gray-200"
   >
     <div className="mx-auto max-w-3xl lg:max-w-5xl flex flex-col-reverse lg:flex-row gap-6">
       <motion.div
         initial={{ opacity: 0, y: 50 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.6, delay: 0.5 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{once: true}}
+        transition={{ duration: 0.7, delay: 0.5 }}
         className=" w-full lg:w-1/2 flex justify-center items-center"
       >
         <HeroVideoTemplate
           videoKey="TalkingAbout_darkMode"
-          src={`./videos/TalkingAbout_${isDark ? "DarkMode" : "lightMode"}.mp4`}
+          src={`./videos/TalkingAbout_${isDark ? "darkMode" : "lightMode"}.mp4`}
           styles=" max-h-[350px] sm:max-h-[500px] rounded-xl"
           loop={true}
         />
