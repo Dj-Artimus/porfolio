@@ -4,12 +4,19 @@ import nodemailer from "nodemailer";
 export const sendContactMessage = async (email, message) => {
   try {
     // Configure Nodemailer
+    console.log("EMAIL_USER:", process.env.EMAIL_USER);
+    console.log("EMAIL_PASS:", process.env.EMAIL_PASS);
+        
     const transporter = nodemailer.createTransport({
-      service: "gmail", // You can also use other SMTP services
+      host: "smtp.gmail.com",
+      port: 465, // Use 465 for SSL, or 587 for TLS
+      secure: true, // Use true for port 465, false for 587
       auth: {
-        user: process.env.EMAIL_USER, // Your email address
-        pass: process.env.EMAIL_PASS, // Your email's app password
+        user: process.env.EMAIL_USER, // Your Gmail address
+        pass: process.env.EMAIL_PASS, // Your Gmail app-specific password
       },
+      debug: true,
+      logger: true,
     });
 
     // Email options

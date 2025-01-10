@@ -36,12 +36,10 @@ const ContactSection = () => {
     startTransition(() => {
       sendContactMessage( email, message.trim() ).then((result) => {
         if (result.success) {
-          console.log("Message sent successfully!")
           setToast({ message: "Message sent successfully!", type: "success", isVisible: true });
           setEmail("");
           setMessage("");
         } else {
-        console.log("Failed to send the message. Please try again.")
           setToast({ message: "Failed to send the message. Please try again.", type: "error", isVisible: true });
         }
       });

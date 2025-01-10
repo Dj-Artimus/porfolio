@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { FaMoon, FaMusic } from "react-icons/fa";
 import ReactSwitch from "react-switch";
 import { IoClose } from "react-icons/io5";
@@ -12,6 +12,21 @@ const LoadingModal = ({
   onMusicToggle,
   isMusicOn,
 }) => {
+  useEffect(() => {
+    if (isLoading) {
+      // Lock scrolling
+      document.body.style.overflow = "hidden";
+    } else {
+      // Unlock scrolling
+      document.body.style.overflow = "";
+    }
+
+    // Cleanup on unmount
+    return () => {
+      document.body.style.overflow = "";
+    };
+  }, [isLoading]);
+
   return (
     isLoading && (
       <div
@@ -71,7 +86,9 @@ const LoadingModal = ({
               />
             </div>
           </div>
-          <p className="text-xs text-gray-600 mt-3 text-center mx-5" >You can also toggle this options later in settings menu.</p>
+          <p className="text-xs text-gray-600 mt-3 text-center mx-5">
+            You can also toggle this options later in settings menu.
+          </p>
           <div
             onClick={() => {
               setIsLoading(false);
