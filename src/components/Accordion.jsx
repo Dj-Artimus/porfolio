@@ -12,13 +12,13 @@ export default function Accordion({ title, content }) {
   };
 
   return (
-    <div className="border border-gray-300 shadow-sm rounded-lg">
+    <div className="border border-gray-300 dark:border-gray-600 shadow-sm rounded-lg">
       {/* Accordion Header */}
       <button
         onClick={toggleAccordion}
         className="flex justify-between items-center w-full px-4 py-3 text-left rounded-md"
       >
-        <span className="font-medium text-gray-800">{title}</span>
+        <span className="font-medium">{title}</span>
         <FiChevronDown
           className={`w-5 h-5 transform transition-transform ${
             isOpen ? "rotate-180" : "rotate-0"

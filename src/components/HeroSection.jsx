@@ -267,7 +267,7 @@ const HeroSection = ({ isDark, isMusicOn }) => {
                 target="_blank"
                 className="text-4xl md:text-6xl border border-gray-900 dark:border-gray-200 transform origin-center rounded-full hover:font-bold hover:shadow-blue-500 hover:scale-125 font-semibold shadow-md transition-all active:scale-100"
               >
-                <RiMailFill className=" scale-[1.1]" />
+                <RiMailFill/>
               </Link>
               <Link
                 href="https://www.linkedin.com/in/pratikpansare"
@@ -328,7 +328,7 @@ const HeroSection = ({ isDark, isMusicOn }) => {
                     target="_blank"
                     className="  text-[40px] border transform origin-center flex-shrink-0 rounded-full hover:font-bold hover:shadow-blue-500 hover:scale-110 font-semibold shadow-md transition-all active:scale-100"
                   >
-                    <RiMailFill className="scale-[1.11]" />
+                    <RiMailFill />
                   </Link>
 
                   <Link
