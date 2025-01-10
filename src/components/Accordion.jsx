@@ -32,7 +32,7 @@ export default function Accordion({ title, content }) {
         animate={{ height: isOpen ? "auto" : 0 }}
         className="overflow-hidden"
       >
-        <div className="flex justify-center">{content}</div>
+        <div className="flex justify-center px-2">{content}</div>
       </motion.div>
     </div>
   );
