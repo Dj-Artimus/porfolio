@@ -14,18 +14,16 @@ const LoadingModal = ({
 }) => {
   useEffect(() => {
     if (isLoading) {
-      // Lock scrolling
-      document.body.style.overflow = "hidden";
-    } else {
-      // Unlock scrolling
-      document.body.style.overflow = "";
+      document.body.style.overflow = "hidden !important";
+    } else if (!isLoading && document.body.style.overflow === "hidden") {
+      document.body.style.overflow = ""; // Unlock only if locked by this modal
     }
-
-    // Cleanup on unmount
+  
     return () => {
-      document.body.style.overflow = "";
+      document.body.style.overflow = ""; // Cleanup
     };
   }, [isLoading]);
+  
 
   return (
     isLoading && (
