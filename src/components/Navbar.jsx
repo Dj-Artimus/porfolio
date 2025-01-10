@@ -1,8 +1,8 @@
 import { useState, useEffect, useRef } from "react";
 import { Link } from "react-scroll";
 import "../app/globals.css";
-import { FaHome, FaLaptopCode, FaMoon, FaMusic } from "react-icons/fa";
-import { FaPerson, FaUserTie, FaWandMagicSparkles } from "react-icons/fa6";
+import { FaLaptopCode, FaMoon, FaMusic } from "react-icons/fa";
+import { FaUserTie, FaWandMagicSparkles } from "react-icons/fa6";
 import { BiSolidHomeHeart } from "react-icons/bi";
 import { LuSettings2 } from "react-icons/lu";
 import { HiChatBubbleLeftRight } from "react-icons/hi2";
@@ -13,10 +13,12 @@ const Navbar = ({ onThemeToggle, isDarkMode, onMusicToggle, isMusicOn }) => {
   const [isVisible, setIsVisible] = useState(true);
   const [lastScrollY, setLastScrollY] = useState(0);
   const [isSettingsOpen, setIsSettingsOpen] = useState(false);
+  const [isClient, setIsClient] = useState(false);
   const settingsRef = useRef(null);
+  useEffect(() => setIsClient(true), []);
 
   const controlNavbar = () => {
-    if (typeof window !== "undefined") {
+    if (isClient) {
       if (window.scrollY > lastScrollY) {
         // if scroll down hide the navbar
         setIsVisible(false);
@@ -35,7 +37,7 @@ const Navbar = ({ onThemeToggle, isDarkMode, onMusicToggle, isMusicOn }) => {
   };
 
   useEffect(() => {
-    if (typeof window !== "undefined") {
+    if (isClient) {
       window.addEventListener("scroll", controlNavbar);
       document.addEventListener("mousedown", handleClickOutside);
 
@@ -75,7 +77,8 @@ const Navbar = ({ onThemeToggle, isDarkMode, onMusicToggle, isMusicOn }) => {
               smooth={true}
               duration={500}
               onClick={() =>
-                section.name === "settings" && setIsSettingsOpen(!isSettingsOpen)
+                section.name === "settings" &&
+                setIsSettingsOpen(!isSettingsOpen)
               }
               className="cursor-pointer w-full hover:text-sky-400 text-xs py-2 p-1 sm:px-3 lg:py-1 lg:text-base flex flex-col gap-1 items-center bor der transition-all duration-300"
             >
@@ -137,8 +140,6 @@ const Navbar = ({ onThemeToggle, isDarkMode, onMusicToggle, isMusicOn }) => {
         </div>
       </nav>
     </div>
-
-
   );
 };
 

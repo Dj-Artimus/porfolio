@@ -5,9 +5,16 @@ import { Router } from "next/router";
 import { useSwipeable } from "react-swipeable";
 import { IoIosArrowForward } from "react-icons/io";
 
-const ContentAndMediaElement = ({ content, images, videos }) => {
+const ContentAndMediaElement = ({
+  content,
+  images,
+  videos,
+  setImgViewerIndex,
+  setImgViewerSources
+}) => {
   const [currentImage, setCurrentImage] = useState(0); // For image slider navigation
   const [currentVideo, setCurrentVideo] = useState(0); // For video slider navigation
+
   // Handles image slider navigation
   const handleImageChange = useCallback(
     (index) => {
@@ -70,6 +77,10 @@ const ContentAndMediaElement = ({ content, images, videos }) => {
             alt={`Image ${currentImage + 1}`}
             {...swipeHandlersForImages}
             className="rounded-xl shadow shadow-slate-500 p-[2px] m-auto mb-4"
+            onClick={() => {
+              setImgViewerSources(images);
+              setImgViewerIndex(currentImage);
+            }}
           />
         )}
         {/* Dot navigation */}
@@ -97,6 +108,7 @@ const ContentAndMediaElement = ({ content, images, videos }) => {
           </button>
         )}
       </div>
+
       {/* Video Gallery or Slider */}
       {videos?.length > 1 ? (
         <div className="relative">

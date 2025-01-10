@@ -13,37 +13,37 @@ const skills = [
     icon: <FaReact size={40} />,
     title: "React & Next.js",
     description:
-      "Build dynamic, scalable, and high-performing web applications using modern frameworks like React and Next.js.",
+      "I build dynamic, scalable, and high-performing web applications using modern frameworks like React and Next.js.",
   },
   {
     icon: <FaNodeJs size={40} />,
     title: "Node.js & APIs",
     description:
-      "Develop efficient server-side solutions and RESTful APIs, ensuring seamless communication between front-end and back-end systems.",
+      "I develop efficient server-side solutions and RESTful APIs, ensuring seamless communication between front-end and back-end systems.",
   },
   {
     icon: <FaDatabase size={40} />,
     title: "SQL & Data Management",
     description:
-      "Design and manage robust databases using SQL ( Supabase ) and NoSQL technologies ( MongoDB ) , ensuring data integrity and scalability.",
+      "I design and manage robust databases using SQL ( Supabase ) and NoSQL technologies ( MongoDB ) , ensuring data integrity and scalability.",
   },
   {
     icon: <FaMobileAlt size={40} />,
     title: "Responsive Design",
     description:
-      "Craft user-centric, mobile-first designs that adapt seamlessly across all devices for an optimal experience.",
+      "I craft user-centric, mobile-first designs that adapt seamlessly across all devices for an optimal experience.",
   },
   {
     icon: <FaCodeBranch size={40} />,
     title: "Version Control (Git)",
     description:
-      "Utilize Git for version control and collaboration, ensuring efficient code management in team environments.",
+      "I utilize Git for version control and collaboration, ensuring efficient code management in team environments.",
   },
   {
     icon: <FaCloud size={40} />,
     title: "Cloud Deployment",
     description:
-      "Deploy scalable applications on cloud platforms like Vercel and Render, ensuring reliability and performance.",
+      "I deploy scalable applications on cloud platforms like Vercel and Render, ensuring reliability and performance.",
   },
 ];
 

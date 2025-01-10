@@ -71,6 +71,7 @@ const ContactSection = () => {
             value={email}
             onChange={(e) => setEmail(e.target.value.trim())}
             required
+            spellCheck={false}
           />
           <textarea
             ref={textareaRef}
@@ -79,6 +80,7 @@ const ContactSection = () => {
             value={message}
             onChange={(e) => setMessage(e.target.value)}
             required
+            spellCheck={false}
           />
           <button
             className="w-full px-6 py-3 rounded-xl bg-white dark:bg-black border border-gray-700 dark:border-gray-300 resize-none flex justify-center"

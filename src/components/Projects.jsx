@@ -369,6 +369,8 @@ const ProjectCard = ({
   tags,
   links,
   details,
+  setImgViewerIndex,
+  setImgViewerSources,
 }) => (
   <div className="hover:scale-[1.01] transition-all duration-300 hover:shadow-md shadow-blue-600 dark:shadow-blue-500 rounded-xl">
     <motion.div
@@ -432,6 +434,8 @@ const ProjectCard = ({
             videos={details?.videos}
             demo={links.liveDemo}
             github={links.github}
+            setImgViewerIndex={setImgViewerIndex}
+            setImgViewerSources={setImgViewerSources}
           />
         }
       />
@@ -439,7 +443,7 @@ const ProjectCard = ({
   </div>
 );
 
-const Projects = () => {
+const Projects = ({ setImgViewerIndex, setImgViewerSources }) => {
   return (
     <section
       id="projects"
@@ -449,7 +453,13 @@ const Projects = () => {
         <h2 className="text-4xl font-bold mb-8 text-center">My Projects</h2>
         <div className="grid grid-cols-1 gap-8">
           {projects.map((project, idx) => (
-            <ProjectCard {...project} key={idx} idx={idx} />
+            <ProjectCard
+              {...project}
+              key={idx}
+              idx={idx}
+              setImgViewerIndex={setImgViewerIndex}
+              setImgViewerSources={setImgViewerSources}
+            />
           ))}
         </div>
       </div>

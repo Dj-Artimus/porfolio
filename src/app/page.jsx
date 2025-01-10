@@ -13,6 +13,7 @@ import Projects from "@/components/Projects";
 import Logo from "@/components/Logo";
 import LoadingModal from "@/components/LoadingModal";
 import HighlightSection from "@/components/HighlightSection";
+import ImageViewer from "@/components/ImageViewer";
 
 const Home = () => {
   const [isDark, setDark] = useState(true);
@@ -20,6 +21,8 @@ const Home = () => {
   const [isLoading, setIsLoading] = useState(true);
   const [loadingProgress, setLoadingProgress] = useState(0);
   const audioRef = useRef(null);
+  const [imgViewerSources, setImgViewerSources] = useState([]);
+  const [imgViewerIndex, setImgViewerIndex] = useState(0);
 
   // useEffect(() => {
   //   const storedTheme = localStorage.getItem("theme");
@@ -55,7 +58,7 @@ const Home = () => {
     }, [isMusicOn]);
 
   
-  const assets = [
+  const impAssets = [
     `./videos/SayingHi_darkMode.mp4`,
     `./videos/PlayingGuitar_darkMode.mp4`,
     `./videos/WorkingOnLaptop_darkMode.mp4`,
@@ -68,8 +71,31 @@ const Home = () => {
     "./images/ideasToReality.gif",
   ];
 
+  const otherAssets = [
+    './images/theBirthClock1.jpg',
+    './images/theBirthClock2.jpg',
+    './images/theBirthClock3.jpg',
+    './images/taskOrbit1.jpg',
+    './images/taskOrbit2.jpg',
+    './images/taskOrbit3.jpg',
+    './images/taskOrbit4.jpg',
+    './images/taskOrbit5.jpg',
+    './images/friendlyPAI1.jpg',
+    './images/friendlyPAI2.jpg',
+    './images/friendlyPAI3.jpg',
+    './images/friendlyPAI4.jpg',
+    './images/friendlyPAI5.jpg',
+    './images/theOcean1.jpg',
+    './images/theOcean2.jpg',
+    './images/theOcean3.jpg',
+    './images/theOcean4.jpg',
+    './images/theOcean5.jpg',
+    './images/theOcean6.jpg',
+    './images/theOcean7.jpg',
+  ]
+
   useEffect(() => {
-    const preloadAssets = async () => {
+    const preloadAssets = async (assets) => {
       let loadedCount = 0;
   
       const updateProgress = () => {
@@ -109,7 +135,8 @@ const Home = () => {
       setIsLoading(false); // Ensure this runs after all promises resolve
     };
   
-    preloadAssets();
+    preloadAssets(impAssets);
+    preloadAssets(otherAssets);
   }, []);
 
   return (
@@ -129,12 +156,18 @@ const Home = () => {
         {/* <HomeSection /> */}
         <HighlightSection />
         <CallToAction isDark={isDark} />
-        <Projects />
+        <Projects setImgViewerIndex={setImgViewerIndex} setImgViewerSources={setImgViewerSources} />
         <AboutSection isDark={isDark} />
         <ContactSection />
         <LoadingModal isLoading={isLoading} setIsLoading={setIsLoading} loadingProgress={loadingProgress} isDarkMode={isDark} isMusicOn={isMusicOn} onMusicToggle={toggleMusic} onThemeToggle={toggleTheme} />
         <audio ref={audioRef} src="./audio/AC_DC_BackInBlack.m4a" preload="auto" controls={false} controlsList="nodownload" loop={true} className="hidden" />
       </main>
+      <ImageViewer
+        imgViewerIndex={imgViewerIndex}
+        setImgViewerIndex={setImgViewerIndex}
+        imgViewerSources={imgViewerSources}
+        setImgViewerSources={setImgViewerSources}
+      />
       <Footer />
     </div>
   );

@@ -124,7 +124,7 @@ const TechStackCarousel = () => (
           initial={{ opacity: 0, y: 40 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          transition={{ duration: 0.6, delay: idx * 0.075}}
+          transition={{ duration: 0.6, delay: idx * 0.05}}
           key={idx}
           className="p-4 flex flex-col items-center"
         >
