@@ -24,11 +24,10 @@ const LoadingModal = ({
     };
   }, [isLoading]);
   
-
   return (
     isLoading && (
       <div
-        className={`fixed w-screen overflow-hidden inset-0 flex items-center justify-center bg-black px-2 z-50`}
+        className={`fixed w-screen overflow-hidden inset-0 flex items-center justify-center bg-black px-2 z-[200]`}
       >
         <div className="flex flex-col items-center bg-slate-900 rounded-3xl shadow-lg p-5 border relative">
           <img
