@@ -32,7 +32,7 @@ const projects = [
       name: "The Ocean",
       description: "Unified Social Media Platform",
       duration: "Oct 24 - Dec 24",
-      content: `"The Ocean 🌊
+      content: `The Ocean 🌊
 
 Overview:
 
@@ -129,7 +129,7 @@ Contribution:
 
 Contributions are welcome! Whether you have ideas for new features or want to help with development, feel free to join the journey.  
 
-Dive in and explore the endless possibilities with The Ocean! 🌊"
+Dive in and explore the endless possibilities with The Ocean! 🌊
 `,
       images: [
         "/images/theOcean1.jpg",
@@ -291,7 +291,7 @@ Why Task Orbit?  Task Orbit is not just another task organizer; it’s a compreh
       name: "The Birth Clock",
       description: "Temporal Journey of Eternal Ticker",
       duration: "Jul 2024",
-      content: `"Temporal-Journey-of-Eternal-Ticker(The-Birth-Clock) ✨⏳🌌
+      content: `Temporal-Journey-of-Eternal-Ticker(The-Birth-Clock) ✨⏳🌌
 
 ⭐ Project Overview : Temporal Journey of Eternal Ticker is a progressive web app that functions as a running timer, ticking every millisecond from the users birth date and time. It visually represents the time elapsed since the users existence in the universe. Built using HTML, CSS, and JavaScript, this project was a great opportunity to hone my skills and explore new technologies. 🚀🛠️
 
@@ -350,7 +350,7 @@ In summary, \"Temporal Journey of Eternal Ticker\" encapsulates the human experi
 
 (2) Biblical Risk Taking: Leveraging the Temporal for Eternal Gain https://kenboa.org/living-out-your-faith/biblical-risk-taking-leveraging-the-temporal-for-eternal-gain/.
 
-(3) Desmond Tutu: 'The price of freedom is eternal vigilance.' https://www.socratic-method.com/quote-meanings/desmond-tutu-the-price-of-freedom-is-eternal-vigilance."
+(3) Desmond Tutu: 'The price of freedom is eternal vigilance.' https://www.socratic-method.com/quote-meanings/desmond-tutu-the-price-of-freedom-is-eternal-vigilance.
 `,
       images: [
         "/images/theBirthClock1.jpg",
