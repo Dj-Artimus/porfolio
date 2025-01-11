@@ -21,9 +21,9 @@ const Footer = () => {
           href="mailto:pratik.s.pansare.in@gmail.com"
           target="_blank"
           rel="noopener noreferrer"
-          className="text-gray-800 -mt-[1px] dark:text-gray-300 hover:text-primary transition"
+          className="text-gray-800 dark:text-gray-300 hover:text-primary transition"
         >
-          <RiMailFill size="32"/>
+          <RiMailFill size="31"/>
         </a>
         <a
           href="https://github.com/Dj-Artimus"

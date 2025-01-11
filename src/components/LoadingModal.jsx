@@ -12,18 +12,22 @@ const LoadingModal = ({
   onMusicToggle,
   isMusicOn,
 }) => {
+
   useEffect(() => {
     if (isLoading) {
-      document.body.style.overflow = "hidden !important";
-    } else if (!isLoading && document.body.style.overflow === "hidden") {
-      document.body.style.overflow = ""; // Unlock only if locked by this modal
+      // Lock scrolling
+      document.body.style.overflow = "hidden";
+    } else {
+      // Unlock scrolling
+      document.body.style.overflow = "";
     }
-  
+
+    // Cleanup on unmount
     return () => {
-      document.body.style.overflow = ""; // Cleanup
+      document.body.style.overflow = "";
     };
   }, [isLoading]);
-  
+   
   return (
     isLoading && (
       <div
