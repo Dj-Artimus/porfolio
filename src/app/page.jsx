@@ -97,43 +97,45 @@ const Home = () => {
 
   useEffect(() => {
     const preloadAssets = async (assets) => {
-      let loadedCount = 0;
+      try {
+        let loadedCount = 0;
 
-      const updateProgress = () => {
-        loadedCount++;
-        const percentage = Math.round((loadedCount / assets.length) * 100);
-        setLoadingProgress(percentage);
-      };
+        const updateProgress = () => {
+          loadedCount++;
+          const percentage = Math.round((loadedCount / assets.length) * 100);
+          setLoadingProgress(percentage);
+        };
 
-      const promises = assets.map((asset) => {
-        return new Promise((resolve) => {
-          const isVideo = asset.endsWith(".mp4");
-          const element = isVideo
-            ? document.createElement("video")
-            : new Image();
-          element.src = asset;
+        const promises = assets.map((asset) => {
+          return new Promise((resolve) => {
+            const isVideo = asset.endsWith(".mp4");
+            const element = isVideo
+              ? document.createElement("video")
+              : new Image();
+            element.src = asset;
 
-          element.onload = () => {
-            updateProgress();
-            resolve();
-          };
-
-          element.onerror = () => {
-            updateProgress(); // Count failed assets as loaded to maintain progress
-            resolve(); // Always resolve to avoid breaking Promise.all
-          };
-
-          if (isVideo) {
-            element.onloadeddata = () => {
+            element.onload = () => {
               updateProgress();
               resolve();
             };
-          }
-        });
-      });
 
-      await Promise.all(promises);
-      setIsLoading(false); // Ensure this runs after all promises resolve
+            element.onerror = () => {
+              updateProgress(); // Count failed assets as loaded to maintain progress
+              resolve(); // Always resolve to avoid breaking Promise.all
+            };
+
+            if (isVideo) {
+              element.onloadeddata = () => {
+                updateProgress();
+                resolve();
+              };
+            }
+          });
+        });
+
+        await Promise.all(promises);
+        setIsLoading(false); // Ensure this runs after all promises resolve
+      } catch (error) {}
     };
 
     preloadAssets(impAssets).then(() => {
