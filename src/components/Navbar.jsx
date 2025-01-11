@@ -13,12 +13,10 @@ const Navbar = ({ onThemeToggle, isDarkMode, onMusicToggle, isMusicOn }) => {
   const [isVisible, setIsVisible] = useState(true);
   const [lastScrollY, setLastScrollY] = useState(0);
   const [isSettingsOpen, setIsSettingsOpen] = useState(false);
-  const [isClient, setIsClient] = useState(false);
   const settingsRef = useRef(null);
-  useEffect(() => setIsClient(true), []);
 
   const controlNavbar = () => {
-    if (isClient) {
+    if (typeof window !== "undefined") {
       if (window.scrollY > lastScrollY) {
         // if scroll down hide the navbar
         setIsVisible(false);
@@ -37,7 +35,7 @@ const Navbar = ({ onThemeToggle, isDarkMode, onMusicToggle, isMusicOn }) => {
   };
 
   useEffect(() => {
-    if (isClient) {
+    if (typeof window !== "undefined") {
       window.addEventListener("scroll", controlNavbar);
       document.addEventListener("mousedown", handleClickOutside);
 
