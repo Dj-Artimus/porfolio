@@ -4,8 +4,9 @@ import Image from "next/image";
 import ContentAndMediaElement from "./ContentAndMediaElement";
 import Link from "next/link";
 import { FaExternalLinkAlt, FaGithub } from "react-icons/fa";
+import { FaRegCircleCheck } from "react-icons/fa6";
 
-const ProjectDetails = ({
+export const ProjectDetails = ({
   logo,
   name,
   username,
@@ -79,10 +80,18 @@ const ProjectDetails = ({
 
         <hr className="mx-4 border-slate-700" />
         <div className="flex w-full justify-between items-center px-4 sm:px-10 py-3">
-          <Link href={demo} target="_blank" className="flex gap-2 items-center w-full justify-center hover:bg-gray-400 dark:hover:bg-gray-800 rounded-xl">
+          <Link
+            href={demo}
+            target="_blank"
+            className="flex gap-2 items-center w-full justify-center hover:bg-gray-400 dark:hover:bg-gray-800 rounded-xl"
+          >
             <FaExternalLinkAlt className="-mt-1" /> Live Demo
           </Link>
-          <Link href={github} target="_blank" className="flex gap-2 items-center w-full justify-center hover:bg-gray-400 dark:hover:bg-gray-800 rounded-xl">
+          <Link
+            href={github}
+            target="_blank"
+            className="flex gap-2 items-center w-full justify-center hover:bg-gray-400 dark:hover:bg-gray-800 rounded-xl"
+          >
             <FaGithub className="-mt-[1px]" /> Github
           </Link>
         </div>
@@ -91,4 +100,48 @@ const ProjectDetails = ({
   );
 };
 
-export default ProjectDetails;
+export const MockUpDetails = ({
+  highlights,
+  mockupimage,
+  setImgViewerIndex,
+  setImgViewerSources,
+}) => {
+  return (
+    <div>
+      <div className="relative mb-6">
+        <div
+          onClick={() => {
+            setImgViewerSources(mockupimage);
+            setImgViewerIndex(0);
+          }}
+          className="relative h-full max-w-[600px] aspect-[4/3] p-6 my-7 m-auto mb-4"
+        >
+          <Image
+            src={mockupimage[0]}
+            alt={`Mockup Image`}
+            className="rounded-xl p-[2px] object-cover"
+            fill
+            priority
+            unselectable="on"
+          />
+        </div>
+
+        <div>
+          <div className=" w-full max-w-[550px] text-gray-800 dark:text-gray-200 bg-slate-200 mx-auto dark:bg-slate-900 p-4 rounded-lg">
+            <div className="w-fit mx-auto">
+              {highlights.map((highlight, idx) => (
+                <div key={idx} className="flex items-center my-3 gap-3">
+                  {/* <div className=" text-3xl">{highlight.icon}</div> */}
+                  <div className="text-3xl text-emerald-400 ">
+                  <FaRegCircleCheck />
+                  </div>
+                  <div>{highlight.title}</div>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+};

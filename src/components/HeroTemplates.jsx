@@ -1,4 +1,5 @@
 import { motion, AnimatePresence } from "framer-motion";
+import Image from "next/image";
 import React from "react";
 
 export const HeroContentTemplate = ({ key, sHeading, bHeading, mHeading }) => {
@@ -41,18 +42,42 @@ export const HeroContentTemplate = ({ key, sHeading, bHeading, mHeading }) => {
   );
 };
 
+// export const HeroImageTemplate = ({ imageKey, src }) => {
+//   return (
+//     <AnimatePresence mode="wait">
+//       <motion.img
+//         key={imageKey}
+//         initial={{ opacity: 0 }}
+//         animate={{ opacity: 1 }}
+//         transition={{ duration: 0.5 }}
+//         src={src}
+//         alt={imageKey}
+//         className=" w-44 xs2:w-48 xs3:w-52 md:w-64 lg:w-52 aspect-[16/9] object-cover rounded-xl md:rounded-3xl dark:bg-black p-2 lg:p-[10px] lg:hover:p-2 transition-all duration-300"
+//       />
+//     </AnimatePresence>
+//   );
+// };
+
 export const HeroImageTemplate = ({ imageKey, src }) => {
   return (
     <AnimatePresence mode="wait">
-      <motion.img
+      <motion.div
         key={imageKey}
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ duration: 0.5 }}
-        src={src}
-        alt={imageKey}
-        className=" w-44 xs2:w-48 xs3:w-52 md:w-64 lg:w-52 aspect-[16/9] object-cover rounded-xl md:rounded-3xl dark:bg-black p-2 lg:p-[10px] lg:hover:p-2 transition-all duration-300"
-      />
+        className="w-44 xs2:w-48 xs3:w-52 md:w-64 lg:w-52 aspect-[16/9] rounded-xl md:rounded-3xl transition-all duration-300 relative"
+      >
+        <Image
+          src={src}
+          alt={imageKey}
+          fill
+          priority
+          unoptimized
+          unselectable="on"
+          className="object-cover rounded-xl md:rounded-3xl dark:bg-black p-2 lg:p-[10px] lg:hover:p-2 transition-all duration-300"
+        />
+      </motion.div>
     </AnimatePresence>
   );
 };

@@ -1,6 +1,6 @@
-import React, { useCallback, useState } from "react";
+import React, { useCallback, useEffect, useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
-import { Typewriter } from "react-simple-typewriter"; // Already installed
+import { Typewriter } from "react-simple-typewriter";
 import {
   HeroContentTemplate,
   HeroImageTemplate,
@@ -12,12 +12,15 @@ import { RiMailFill } from "react-icons/ri";
 import { FaSquareXTwitter } from "react-icons/fa6";
 import { ImProfile } from "react-icons/im";
 import SongCredit from "./SongCredit";
+import Image from "next/image";
 
 const HeroSection = ({ isDark, isMusicOn }) => {
   // const [isMusicOn, setIsMusicOn] = useState(false);
   const [isActionModelHover, setIsActionModelHover] = useState(false);
   const [isNameHover, setIsNameHover] = useState(false);
   const [currentHeroContent, setCurrentHeroContent] = useState(0);
+
+  const resumeLink = process.env.NEXT_PUBLIC_LINK_RESUME;
 
   const HeroContent = useCallback(
     (isNameHover, setIsNameHover) => [
@@ -108,7 +111,7 @@ const HeroSection = ({ isDark, isMusicOn }) => {
         image: (
           <HeroImageTemplate
             imageKey="helloWorld"
-            src="./images/helloWorld.gif"
+            src="/images/helloWorld.gif"
           />
         ),
       },
@@ -124,7 +127,7 @@ const HeroSection = ({ isDark, isMusicOn }) => {
         image: (
           <HeroImageTemplate
             imageKey="responsiveDesign"
-            src="./images/responsiveDesigner.gif"
+            src="/images/responsiveDesigner.gif"
           />
         ),
       },
@@ -140,7 +143,7 @@ const HeroSection = ({ isDark, isMusicOn }) => {
         image: (
           <HeroImageTemplate
             imageKey="continuousInnovation"
-            src="./images/continuousDev.gif"
+            src="/images/continuousDev.gif"
           />
         ),
       },
@@ -154,10 +157,7 @@ const HeroSection = ({ isDark, isMusicOn }) => {
           />
         ),
         image: (
-          <HeroImageTemplate
-            imageKey="timeMoney"
-            src="./images/timeMoney.gif"
-          />
+          <HeroImageTemplate imageKey="timeMoney" src="/images/timeMoney.gif" />
         ),
       },
       {
@@ -170,11 +170,22 @@ const HeroSection = ({ isDark, isMusicOn }) => {
           />
         ),
         image: (
-          <img
-            src="./images/ideasToReality.gif"
-            alt="ideasToReality"
-            className=" w-44 xs2:w-48 xs3:w-52 md:w-64 lg:w-52 aspect-[16/9] object-cover rounded-xl md:rounded-3xl dark:bg-gray-900 p-2 lg:p-[10px] lg:hover:p-2 transition-all duration-300"
-          />
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ duration: 0.5 }}
+            className="w-44 xs2:w-48 xs3:w-52 md:w-64 lg:w-52 aspect-[16/9] rounded-xl md:rounded-3xl transition-all duration-300 relative"
+          >
+            <Image
+              src="/images/ideasToReality.gif"
+              alt="ideasToReality"
+              fill
+              priority
+              unoptimized
+              unselectable="on"
+              className="object-cover rounded-xl md:rounded-3xl dark:bg-gray-900 p-2 lg:p-[10px] lg:hover:p-2 transition-all duration-300"
+            />
+          </motion.div>
         ),
       },
     ],
@@ -229,6 +240,9 @@ const HeroSection = ({ isDark, isMusicOn }) => {
               onMouseLeave={() => setIsActionModelHover(false)}
               onClick={() => {
                 setIsActionModelHover(!isActionModelHover);
+                setTimeout(() => {
+                  setIsActionModelHover(false);
+                }, 3000);
               }}
             ></div>
           </div>
@@ -252,9 +266,7 @@ const HeroSection = ({ isDark, isMusicOn }) => {
                 Contact Me
               </a>
               <Link
-                href={
-                  "https://drive.google.com/file/d/1Hb4m1rKXLTYp2ANH8dVv2zvQrOyQiD_Q/view?usp=drivesdk"
-                }
+                href={resumeLink}
                 target="_blank"
                 className="text-lg md:text-2xl w-full px-2 py-1 md:px-4 md:py-3 text-center border border-gray-900 dark:border-gray-200 rounded-xl hover:text-blue-600 dark:hover:text-blue-300 hover:font-bold hover:shadow-blue-500 inline-block hover:scale-110 font-semibold shadow-md transition-all duration-200 active:scale-100"
               >
@@ -267,7 +279,7 @@ const HeroSection = ({ isDark, isMusicOn }) => {
                 target="_blank"
                 className="text-4xl md:text-6xl border border-gray-900 dark:border-gray-200 transform origin-center rounded-full hover:font-bold hover:shadow-blue-500 hover:scale-125 font-semibold shadow-md transition-all active:scale-100"
               >
-                <RiMailFill/>
+                <RiMailFill />
               </Link>
               <Link
                 href="https://www.linkedin.com/in/pratikpansare"
@@ -380,9 +392,7 @@ const HeroSection = ({ isDark, isMusicOn }) => {
             className=" w-fit hidden lg:block absolute bottom-5 right-5"
           >
             <Link
-              href={
-                "https://drive.google.com/file/d/1Hb4m1rKXLTYp2ANH8dVv2zvQrOyQiD_Q/view?usp=drivesdk"
-              }
+              href={resumeLink}
               target="_blank"
               className="flex items-center gap-2 border rounded-full p-4 py-2 text-xl hover:text-blue-300 hover:font-bold hover:shadow-blue-500 hover:scale-110 shadow-md transition-all duration-200 active:scale-100"
             >

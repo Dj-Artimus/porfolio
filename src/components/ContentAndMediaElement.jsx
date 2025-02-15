@@ -4,13 +4,14 @@ import ContentElement from "./ContentElement";
 import { Router } from "next/router";
 import { useSwipeable } from "react-swipeable";
 import { IoIosArrowForward } from "react-icons/io";
+import Image from "next/image";
 
 const ContentAndMediaElement = ({
   content,
   images,
   videos,
   setImgViewerIndex,
-  setImgViewerSources
+  setImgViewerSources,
 }) => {
   const [currentImage, setCurrentImage] = useState(0); // For image slider navigation
   const [currentVideo, setCurrentVideo] = useState(0); // For video slider navigation
@@ -72,16 +73,23 @@ const ContentAndMediaElement = ({
 
         {/* Slider image display */}
         {images?.length > 0 && (
-          <img
-            src={images[currentImage]?.split("<|>")[0]}
-            alt={`Image ${currentImage + 1}`}
+          <div
             {...swipeHandlersForImages}
-            className="rounded-xl shadow shadow-slate-500 p-[2px] m-auto mb-4"
             onClick={() => {
               setImgViewerSources(images);
               setImgViewerIndex(currentImage);
             }}
-          />
+            className="relative h-full aspect-square rounded-xl shadow shadow-slate-500 p-[2px] m-auto mb-4"
+          >
+            <Image
+              src={images[currentImage]?.split("<|>")[0]}
+              alt={`Image ${currentImage + 1}`}
+              className="rounded-xl p-[2px] object-cover"
+              fill
+              priority
+              unselectable="on"
+            />
+          </div>
         )}
         {/* Dot navigation */}
         {images?.length > 1 && (

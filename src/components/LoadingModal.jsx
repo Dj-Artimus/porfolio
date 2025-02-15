@@ -2,6 +2,7 @@ import React, { useEffect } from "react";
 import { FaMoon, FaMusic } from "react-icons/fa";
 import ReactSwitch from "react-switch";
 import { IoClose } from "react-icons/io5";
+import Image from "next/image";
 
 const LoadingModal = ({
   loadingProgress,
@@ -34,11 +35,17 @@ const LoadingModal = ({
         className={`fixed w-screen overflow-hidden inset-0 flex items-center justify-center bg-black px-2 z-[200]`}
       >
         <div className="flex flex-col items-center bg-slate-900 rounded-3xl shadow-lg p-5 border relative">
-          <img
-            src="/images/coding.gif" // Replace with your image path
-            alt="Loading"
-            className="w-full max-w-3xl h-auto aspect-[16/9] mb-4 rounded-2xl border"
-          />
+          <div className=" w-full lg:w-[100vw] relative max-w-3xl h-auto aspect-[16/9] mb-4 rounded-2xl border">
+            <Image
+              src="/images/coding.gif" // Replace with your image path
+              alt="Loading"
+              className=""
+              fill
+              priority
+              unselectable="on"
+              unoptimized
+            />
+          </div>
           <div className="w-full bg-gray-500 rounded-full h-4 relative">
             <div
               className="bg-blue-600 h-4 rounded-full"

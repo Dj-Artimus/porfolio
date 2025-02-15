@@ -1,8 +1,8 @@
-import { motion } from "framer-motion";
+import { motion, AnimatePresence } from "framer-motion";
 import Link from "next/link";
 import { FaExternalLinkAlt, FaGithub } from "react-icons/fa";
 import Accordion from "./Accordion";
-import ProjectDetails from "./ProjectDetails";
+import { MockUpDetails, ProjectDetails } from "./ProjectDetails";
 
 const projects = [
   {
@@ -13,6 +13,19 @@ const projects = [
       "Utilized Supabase, improving development by 30% for tasks like authentication, real-time messaging, and database management, alongside Tailwind CSS for a clean, ocean-themed interface.",
       "Innovated terminologies like Anchors (Followers), Droplets (Posts), Stars (Likes), Ripples (Comments), and Gems (Bookmarks) to align with the platform's theme and enhance user engagement by 40%.",
       "Improved session management and state synchronization efficiency by 20% using Zustand.",
+    ],
+    mockUpImage: "/images/TheOcean_Mockup.png",
+    highlights: [
+      {
+        icon: "🌊",
+        title: " Unified Experience & Ocean Score",
+      },
+      { icon: "🌟", title: "Innovative ocean-themed Terminologies & design" },
+      {
+        icon: "⚡",
+        title:
+          " Real-Time Messaging, dynamic UI updates",
+      },
     ],
     tags: [
       "React",
@@ -152,6 +165,12 @@ Dive in and explore the endless possibilities with The Ocean! 🌊
       "Leveraged packages like Framer Motion and Zustand to enhanced interactivity and state management by 20%.",
       "Optimized API performance, reducing response times by 15% through efficient back-end integration via robust API testing using Postman.",
     ],
+    mockUpImage: "/images/FriendlyPAI_Mockup.png",
+    highlights: [
+      { icon: "🤖", title: "Friendly & Personalized AI Chatbot" },
+      { icon: "💖", title: "Tailored Responses only for YOU" },
+      { icon: "📳", title: " Visually Appealing UI & Responsive Design" },
+    ],
     tags: [
       "MongoDB",
       "Express.js",
@@ -216,6 +235,99 @@ Let’s make interactions smarter and more enjoyable with Friendly PAI – becau
     },
   },
   {
+    title: "Time Coder - VS Code Extension for Time Management",
+    description:
+      "Developed a VS Code extension designed to help developers efficiently track their coding time and enhance productivity with integrated stopwatch, Pomodoro, and session tracking features.",
+    points: [
+      "Implemented multiple time tracking modes, including Stopwatch and Pomodoro Timer, to enhance productivity and focus during coding sessions.",
+      "Integrated session tracking and analysis to help developers review their productivity and optimize work patterns.",
+      "Built an intuitive UI with VS Code Webview Panels and Sidebar integration for seamless in-editor navigation and user experience.",
+      "Enhanced user engagement with motivational Fortune Messages to inspire users before starting tasks.",
+    ],
+    mockUpImage: "/images/TimeCoder_Mockup.png",
+    highlights: [
+      {
+        icon: "⏱️",
+        title: "Multiple Timer Modes - Stopwatch, Pomodoro & Session Tracking",
+      },
+      {
+        icon: "🔮",
+        title: "Motivational Fortune Messages to inspire YOU",
+      },
+      {
+        icon: "🎨",
+        title: "Interactive UI with Webview & Sidebar Panels",
+      },
+    ],
+    tags: [
+      "JavaScript",
+      "Yeoman",
+      "VS Code API",
+      "Webview Panels",
+      "Productivity Tool",
+      "Open Source",
+    ],
+    links: {
+      liveDemo:
+        "https://marketplace.visualstudio.com/items?itemName=DjArtimus.timecoder", // If you have a live demo link, add it here
+      github: "https://github.com/Dj-Artimus/Time-Coder",
+    },
+    details: {
+      logo: "/images/timeCoderIcon.jpg",
+      name: "Time Coder",
+      description: "VS Code Extension for Time Management",
+      duration: "Jan 25 - Jan 25",
+      content: `Time Coder ⏱️
+  
+  Overview:
+  
+  Time Coder is a powerful VS Code extension designed to help developers manage their coding time more efficiently. Whether you're working on a complex project or practicing new skills, Time Coder keeps you on track with integrated time management tools, including a Stopwatch, Pomodoro Timer, and detailed session tracking. 🎯
+  
+  Getting Started:
+  
+  - Install Time Coder from the VS Code Marketplace.  
+  - Launch Time Coder from the Sidebar or Status Bar.  
+  - Start tracking time with the Stopwatch or focus with Pomodoro sessions.  
+  
+  Features:
+  
+  Core Functionalities:
+  
+  ⏱️ Stopwatch Mode: Measure elapsed time with start, pause, and reset options.  
+  ⏰ Pomodoro Timer: Boost productivity with customizable work intervals.  
+  📊 Session Tracking: Record and analyze coding sessions for better time management.  
+  📌 Status Bar Integration: Real-time updates for time tracking.  
+  🌐 Webview Panel: An interactive UI for managing timers.  
+  📂 Sidebar Panel: Access timers through a dedicated sidebar.  
+  🚀 Shortcut Commands: Quick control of timers using VS Code commands.  
+  🏆 Fortune Messages: Motivational quotes to inspire productivity.  
+  
+  Why Time Coder?  
+  
+  Time Coder was created to solve a personal need for efficient time tracking within VS Code. Traditional timers and apps required switching contexts, breaking the flow of coding. By integrating directly into VS Code, Time Coder allows developers to stay focused and in the zone, maximizing productivity. 🚀
+  
+  Tech Stack:  
+  
+  Time Coder leverages the following technologies to deliver a seamless user experience:  
+  
+  ⚙️ JavaScript: Ensures robust and maintainable code.  
+  💻 VS Code API: Integrates deeply with the VS Code editor.  
+  🌐 Webview Panels: Provides an interactive and visually appealing UI.  
+  📊 Local Storage: Records and manages session data.  
+  🎨 CSS: Styles the extension's interface for a clean and modern look.  
+  
+  Contribution:  
+  
+  Time Coder is open-source and welcomes community contributions. Whether you want to suggest new features, fix bugs, or enhance the UI, your input is highly valued! Check out the GitHub repository to get started.  
+  
+  Dive in and start tracking your productivity with Time Coder! ⏱️
+  `,
+      images: [
+        "/images/timeCoder.png",
+      ],
+    },
+  },
+  {
     title: "Task Orbit - Task Management Web App",
     description:
       "Built a mission-based task management PWA with 3 task levels (Prime, Power, Lite) to enhance user engagement.",
@@ -223,6 +335,12 @@ Let’s make interactions smarter and more enjoyable with Friendly PAI – becau
       "Progressive Web App (PWA) is designed to help users to manage tasks efficiently with a visually appealing UI and a host of powerful features.",
       "Add, Edit, Delete Tasks:Manage tasks seamlessly, Progress Bar:Track the number of tasks and completed tasks, Past Tasks Toggle:Easily access and review past tasks.",
       "Missions & Orbits:Each task is a mission with a title and description, and each day is an orbit to complete.Themes:Switch between light mode, dark mode",
+    ],
+    mockUpImage: "/images/TaskOrbit_Mockup.png",
+    highlights: [
+      { icon: "🚀", title: " Orbiting Towards Success" },
+      { icon: "📊", title: " Progress Bar & Mission Levels" },
+      { icon: "🌗", title: " Themes for Personalized Experience" },
     ],
     tags: ["Java Script", "Bootstrap", "HTML"],
     links: {
@@ -280,6 +398,15 @@ Why Task Orbit?  Task Orbit is not just another task organizer; it’s a compreh
       "Real-Time Timer:Continuously updates to show the exact time since the users birth.",
       "Progressive Web App:Offers a  app like experience across all operating systems.",
       "Responsive Design:Ensures a seamless experience on both desktop and mobile devices.",
+    ],
+    mockUpImage: "/images/TheBirthClock_Mockup.png",
+    highlights: [
+      { icon: "⏳", title: " Real-Time Spectacular Ticking Timer" },
+      {
+        icon: "🚀",
+        title: " Elapsed Time since your Existence in the UNIVERSE",
+      },
+      { icon: "💠", title: " Lavish Responsive Design with PWA" },
     ],
     tags: ["Java Script", "CSS", "HTML"],
     links: {
@@ -365,6 +492,8 @@ const ProjectCard = ({
   idx,
   title,
   description,
+  mockUpImage,
+  highlights,
   points,
   tags,
   links,
@@ -402,6 +531,14 @@ const ProjectCard = ({
         </div>
       </div>
       <p className="mb-2 px-3 font-semibold">{description}</p>
+
+      <MockUpDetails
+        mockupimage={[mockUpImage]}
+        highlights={highlights}
+        setImgViewerIndex={setImgViewerIndex}
+        setImgViewerSources={setImgViewerSources}
+      />
+
       <ul className="text-gray-800 dark:text-gray-200">
         {points.map((point, idx) => (
           <li key={idx} className="list-disc ml-6 mb-2">
@@ -409,6 +546,7 @@ const ProjectCard = ({
           </li>
         ))}
       </ul>
+
       <hr className="my-4 border-gray-700 dark:border-gray-300" />
       <div className="flex gap-2 px-1 flex-wrap my-4">
         {tags.map((tag, idx) => (

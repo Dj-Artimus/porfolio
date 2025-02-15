@@ -34,6 +34,19 @@ const Home = () => {
   //   }
   // }, []);
 
+  useEffect(() => {
+    if ("serviceWorker" in navigator) {
+      navigator.serviceWorker
+        .register("/assets-service-worker.js")
+        .then((registration) =>
+          console.log("Service Worker registered:", registration)
+        )
+        .catch((error) =>
+          console.log("Service Worker registration failed:", error)
+        );
+    }
+  }, []);
+
   const toggleTheme = () => {
     setDark((prev) => {
       const newTheme = !prev;
@@ -60,39 +73,50 @@ const Home = () => {
   }, [isMusicOn]);
 
   const impAssets = [
-    `./videos/SayingHi_darkMode.mp4`,
-    `./videos/PlayingGuitar_darkMode.mp4`,
-    `./videos/WorkingOnLaptop_darkMode.mp4`,
-    `./videos/TalkingAbout_darkMode.mp4`,
-    `./audio/AC_DC_BackInBlack.m4a`,
-    "./images/helloWorld.gif",
-    "./images/responsiveDesigner.gif",
-    "./images/continuousDev.gif",
-    "./images/timeMoney.gif",
-    "./images/ideasToReality.gif",
+    `/audio/AC_DC_BackInBlack.m4a`,
+    `/videos/WorkingOnLaptop_darkMode.mp4`,
+    `/videos/PlayingGuitar_darkMode.mp4`,
+    `/videos/SayingHi_darkMode.mp4`,
+    "/images/helloWorld.gif",
   ];
 
   const otherAssets = [
-    "./images/theBirthClock1.jpg",
-    "./images/theBirthClock2.jpg",
-    "./images/theBirthClock3.jpg",
-    "./images/taskOrbit1.jpg",
-    "./images/taskOrbit2.jpg",
-    "./images/taskOrbit3.jpg",
-    "./images/taskOrbit4.jpg",
-    "./images/taskOrbit5.jpg",
-    "./images/friendlyPAI1.jpg",
-    "./images/friendlyPAI2.jpg",
-    "./images/friendlyPAI3.jpg",
-    "./images/friendlyPAI4.jpg",
-    "./images/friendlyPAI5.jpg",
-    "./images/theOcean1.jpg",
-    "./images/theOcean2.jpg",
-    "./images/theOcean3.jpg",
-    "./images/theOcean4.jpg",
-    "./images/theOcean5.jpg",
-    "./images/theOcean6.jpg",
-    "./images/theOcean7.jpg",
+    "/images/responsiveDesigner.gif",
+    "/images/continuousDev.gif",
+    "/images/timeMoney.gif",
+    "/images/ideasToReality.gif",
+    `/videos/WorkingOnPC_darkMode.mp4`,
+    `/videos/TalkingAbout_darkMode.mp4`,
+    "/images/FriendlyPAI_Mockup.png",
+    "/images/TaskOrbit_Mockup.png",
+    "/images/TheBirthClock_Mockup.png",
+    "/images/TheOcean_Mockup.png",
+    "/images/TimeCoder_Mockup.png",
+    `/videos/WorkingOnLaptop_lightMode.mp4`,
+    `/videos/PlayingGuitar_lightMode.mp4`,
+    `/videos/WorkingOnPC_lightMode.mp4`,
+    `/videos/TalkingAbout_lightMode.mp4`,
+    `/videos/SayingHi_lightMode.mp4`,
+    "/images/theBirthClock1.jpg",
+    "/images/theBirthClock2.jpg",
+    "/images/theBirthClock3.jpg",
+    "/images/taskOrbit1.jpg",
+    "/images/taskOrbit2.jpg",
+    "/images/taskOrbit3.jpg",
+    "/images/taskOrbit4.jpg",
+    "/images/taskOrbit5.jpg",
+    "/images/friendlyPAI1.jpg",
+    "/images/friendlyPAI2.jpg",
+    "/images/friendlyPAI3.jpg",
+    "/images/friendlyPAI4.jpg",
+    "/images/friendlyPAI5.jpg",
+    "/images/theOcean1.jpg",
+    "/images/theOcean2.jpg",
+    "/images/theOcean3.jpg",
+    "/images/theOcean4.jpg",
+    "/images/theOcean5.jpg",
+    "/images/theOcean6.jpg",
+    "/images/theOcean7.jpg",
   ];
 
   useEffect(() => {
@@ -143,7 +167,17 @@ const Home = () => {
     });
   }, []);
 
-  return (
+  return isLoading ? (
+    <LoadingModal
+      isLoading={isLoading}
+      setIsLoading={setIsLoading}
+      loadingProgress={loadingProgress}
+      isDarkMode={isDark}
+      isMusicOn={isMusicOn}
+      onMusicToggle={toggleMusic}
+      onThemeToggle={toggleTheme}
+    />
+  ) : (
     <div className={`${isDark ? "dark" : ""}`}>
       <Head>
         <title>Pratik {"<DjArtimus>"} | Full-Stack Developer</title>
@@ -186,15 +220,6 @@ const Home = () => {
         setImgViewerIndex={setImgViewerIndex}
         imgViewerSources={imgViewerSources}
         setImgViewerSources={setImgViewerSources}
-      />
-      <LoadingModal
-        isLoading={isLoading}
-        setIsLoading={setIsLoading}
-        loadingProgress={loadingProgress}
-        isDarkMode={isDark}
-        isMusicOn={isMusicOn}
-        onMusicToggle={toggleMusic}
-        onThemeToggle={toggleTheme}
       />
       <Footer />
     </div>

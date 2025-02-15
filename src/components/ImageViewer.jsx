@@ -4,6 +4,7 @@ import { IoIosArrowForward } from "react-icons/io";
 import { CgClose } from "react-icons/cg";
 import { motion } from "framer-motion";
 import { AnimatePresence } from "framer-motion";
+import Image from "next/image";
 // Example images array (for testing)
 
 const ImageViewer = ({
@@ -88,12 +89,21 @@ const ImageViewer = ({
                   animate={{ scale: 1, opacity: 1 }}
                   transition={{ duration: 0.3, delay: 0.1 }}
                 >
-                  <img
-                    src={imgViewerSources[imgViewerIndex]?.split("<|>")[0]}
-                    alt={`Image ${imgViewerIndex + 1}`}
-                    {...swipeHandlersForImages}
-                    className={`max-w-[90vw] max-h-[90vh] object-contain shadow-slate-500 border border-slate-700 rounded-md shadow-sm transition-transform duration-500 ease-out`}
-                  />
+                  <div className="">
+                    <div
+                      {...swipeHandlersForImages}
+                      className={`relative h-[90vh] max-w-[90vw] max-h-fit aspect-square object-contain shadow-slate-500 border border-slate-700 rounded-md shadow-sm transition-transform duration-500 ease-out`}
+                    >
+                      <Image
+                        src={imgViewerSources[imgViewerIndex]?.split("<|>")[0]}
+                        alt={`Image ${imgViewerIndex + 1}`}
+                        fill
+                        priority
+                        unselectable="on"
+                        className="object-contain rounded-md transition-transform duration-500 ease-out"
+                      />
+                    </div>
+                  </div>
                   <div className="flex justify-center mt-2 space-x-2">
                     {imgViewerSources.length > 1 &&
                       imgViewerSources.map((_, index) => (
