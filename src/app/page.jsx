@@ -38,9 +38,7 @@ const Home = () => {
     if ("serviceWorker" in navigator) {
       navigator.serviceWorker
         .register("/assets-service-worker.js")
-        .then((registration) =>
-          console.log("Service Worker registered:", registration)
-        )
+        .then()
         .catch((error) =>
           console.log("Service Worker registration failed:", error)
         );
