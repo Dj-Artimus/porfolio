@@ -19,6 +19,8 @@ const ImageViewer = ({
     }, 500); // Animation duration
   };
 
+  const imgSrc = imgViewerSources[imgViewerIndex]?.split("<|>")[0];
+
   const goToNext = () => {
     setImgViewerIndex((imgViewerIndex + 1) % imgViewerSources.length);
   };
@@ -43,6 +45,9 @@ const ImageViewer = ({
       // Unlock scrolling
       document.body.style.overflow = "";
     }
+
+    console.log(imgSrc);
+    console.log(imgSrc?.includes("Mockup"));
 
     // Cleanup on unmount
     return () => {
@@ -92,10 +97,14 @@ const ImageViewer = ({
                   <div className="">
                     <div
                       {...swipeHandlersForImages}
-                      className={`relative h-[90vh] max-w-[90vw] max-h-fit aspect-square object-contain shadow-slate-500 border border-slate-700 rounded-md shadow-sm transition-transform duration-500 ease-out`}
+                      className={`relative ${
+                        imgSrc.includes("Mockup")
+                          ? "aspect-[4/3]"
+                          : "aspect-square"
+                      } h-[90vh] max-w-[90vw] max-h-fit shadow-slate-500 border border-slate-700 rounded-md shadow-sm transition-transform duration-500 ease-out`}
                     >
                       <Image
-                        src={imgViewerSources[imgViewerIndex]?.split("<|>")[0]}
+                        src={imgSrc}
                         alt={`Image ${imgViewerIndex + 1}`}
                         fill
                         priority

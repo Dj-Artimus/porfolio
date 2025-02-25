@@ -13,7 +13,6 @@ const LoadingModal = ({
   onMusicToggle,
   isMusicOn,
 }) => {
-
   useEffect(() => {
     if (isLoading) {
       // Lock scrolling
@@ -28,7 +27,7 @@ const LoadingModal = ({
       document.body.style.overflow = "";
     };
   }, [isLoading]);
-   
+
   return (
     isLoading && (
       <div
@@ -39,7 +38,7 @@ const LoadingModal = ({
             <Image
               src="/images/coding.gif" // Replace with your image path
               alt="Loading"
-              className=""
+              className=" rounded-2xl "
               fill
               priority
               unselectable="on"
