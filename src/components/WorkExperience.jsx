@@ -16,7 +16,7 @@ const workExperiences = [
     id: 1,
     Icon: FaShoppingCart,
     title: "Maedric",
-    subtitle: "Premium Jewelry E-Commerce Platform",
+    subtitle: "Premium Jewellery & Gemstones E-Commerce Platform",
     role: "Full-Stack Developer",
     duration: "9+ Months",
     domain: "E-Commerce Â· Luxury Jewelry",
@@ -40,7 +40,7 @@ const workExperiences = [
           {
             type: "highlight",
             value:
-              "Product Discovery â†’ Wishlist â†’ Cart â†’ Checkout â†’ Payment â†’ Order History",
+              "Product Discovery > Wishlist > Cart > Checkout > Payment > Order History",
           },
           {
             type: "text",
@@ -81,7 +81,7 @@ const workExperiences = [
           {
             type: "text",
             value:
-              "This was a turning point for me because: It proved that my skills had real market value and that I wasn't just \"learning development\" â€” I was capable of delivering real-world solutions that clients trust and pay for.",
+              "This was a turning point for me because: It proved that my skills had real market value and that I wasn't just \"learning development\" — I was capable of delivering real-world solutions that clients trust and pay for.",
           },
         ],
       },
@@ -124,7 +124,7 @@ const workExperiences = [
               {
                 type: "text",
                 value:
-                  "This is one of the most critical systems of the entire platform â€” and I built it 100% myself.",
+                  "This is one of the most critical systems of the entire platform — and I built it 100% myself.",
               },
               {
                 type: "subsection",
@@ -193,7 +193,7 @@ const workExperiences = [
               {
                 type: "text",
                 value:
-                  "This is the heart of the platform â€” and I built it entirely.",
+                  "This is the heart of the platform and I built it entirely.",
               },
               {
                 type: "text",
@@ -238,7 +238,7 @@ const workExperiences = [
                       {
                         type: "list",
                         items: [
-                          "Cart merging (guest â†’ login)",
+                          "Cart merging (guest > login)",
                           "Quantity validation",
                           "Data consistency",
                         ],
@@ -534,7 +534,7 @@ const workExperiences = [
               "Designing scalable backend architectures",
               "Handling real-world client expectations",
               "Managing long-term projects (9+ months)",
-              "Thinking beyond features â†’ system-level thinking",
+              "Thinking beyond features — system-level thinking",
             ],
           },
         ],
@@ -575,7 +575,7 @@ const workExperiences = [
           {
             type: "text",
             value:
-              "Most Important: I built 100% of the Product Management System and 100% of the E-Commerce Lifecycle System â€” these are the core revenue-driving systems of any platform.",
+              "Most Important: I built 100% of the Product Management System and 100% of the E-Commerce Lifecycle System — these are the core revenue-driving systems of any platform.",
           },
         ],
       },
@@ -603,7 +603,7 @@ const workExperiences = [
     subtitle: "Energy-Efficient Home Improvements Platform",
     role: "Web Developer & UX Designer",
     duration: "6+ Months",
-    domain: "Sustainability Â· Energy Efficiency",
+    domain: "Sustainability & Energy Efficiency",
     tags: ["Wix", "UI/UX Design", "Responsive Design", "Payment Integration"],
     overview:
       "Over 6+ months, I worked with a UK-based client on a platform called Heat Scheme, focused on helping households and employers understand and implement energy-efficient home improvements such as heating systems, insulation, solar panels, and related services.",
@@ -619,7 +619,7 @@ const workExperiences = [
           {
             type: "text",
             value:
-              "This was not just a single task project â€” it evolved into a long-term collaboration, where I handled multiple aspects of design, development, responsiveness, and user experience improvements.",
+              "This was not just a single task project — it evolved into a long-term collaboration, where I handled multiple aspects of design, development, responsiveness, and user experience improvements.",
           },
         ],
       },
@@ -961,7 +961,7 @@ const workExperiences = [
           {
             type: "list",
             items: [
-              "Client continued giving more work â†’ strong trust",
+              "Client continued giving more work > strong trust",
               "Payment completed smoothly after setup",
               "Positive response on ease of collaboration",
               'Described process as "easy" (important signal)',
@@ -1001,7 +1001,7 @@ const workExperiences = [
     subtitle: "Blockchain-Based Asset Verification Platform",
     role: "Full-Stack Web Developer (Frontend-Focused)",
     duration: "6+ Months",
-    domain: "Blockchain Â· Web3 Â· Tech",
+    domain: "Blockchain, Web3, Tech",
     tags: [
       "Next.js",
       "React",
@@ -1102,7 +1102,7 @@ const workExperiences = [
               {
                 type: "list",
                 items: [
-                  "Created 3â€“4 different design versions (V1, V2, V3)",
+                  "Created 3—4 different design versions (V1, V2, V3)",
                   "Continuously refined based on client feedback",
                   "Explored different layouts, animation styles, content structures, and UX flows",
                 ],
@@ -1120,7 +1120,7 @@ const workExperiences = [
             content: [
               {
                 type: "text",
-                value: "The project expanded from 10 pages â†’ 29+ pages, including:",
+                value: "The project expanded from 10 pages > 29+ pages, including:",
               },
               {
                 type: "list",
@@ -1290,7 +1290,7 @@ const workExperiences = [
           {
             type: "text",
             value:
-              "This project wasn't just development â€” it was collaboration + problem solving. I helped by:",
+              "This project wasn't just development — it was collaboration + problem solving. I helped by:",
           },
           {
             type: "list",
@@ -1425,11 +1425,11 @@ const workExperiences = [
   {
     id: 4,
     Icon: FaGlobe,
-    title: "International Business Website",
+    title: "GMT International Business Website",
     subtitle: "Design-to-Development Conversion Project",
     role: "Full-Stack Web Developer",
     duration: "3+ Months",
-    domain: "Consulting Â· Service Business",
+    domain: "Consulting, Service Business",
     tags: ["Next.js", "Tailwind CSS", "Framer Motion", "Vercel"],
     overview:
       "Over a period of 3+ months, I worked with an international client to design and develop a fully functional, modern business website from provided design assets, transforming static design files into a high-performance, interactive web application.",
@@ -1866,7 +1866,7 @@ const ExperienceCard = ({ experience, idx }) => {
     experience;
 
   return (
-    <div className="hover:scale-[1.01] transition-all duration-300 hover:shadow-md shadow-blue-600 dark:shadow-blue-500 rounded-xl">
+    <div className="hover:scale-[1.005] transition-all duration-300 hover:shadow-md shadow-blue-600 dark:shadow-blue-500 rounded-xl">
       <motion.div
         className="bg-white dark:bg-gray-800 shadow-md rounded-xl p-4 py-5"
         initial={{ opacity: 0, y: 40 }}
@@ -1954,7 +1954,7 @@ const WorkExperience = () => (
       >
         Real-world projects. Long-term clients. Production-grade systems.
       </motion.p>
-      <div className="grid grid-cols-1 gap-8">
+      <div className="grid grid-cols-1 gap-10">
         {workExperiences.map((exp, idx) => (
           <ExperienceCard key={exp.id} experience={exp} idx={idx} />
         ))}
