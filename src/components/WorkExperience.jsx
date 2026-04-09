@@ -1,52 +1,54 @@
 import React from 'react';
-import './WorkExperience.css';
+import { motion } from 'framer-motion';
+
+const workExperiences = [
+  {
+    id: 1,
+    title: 'Software Engineer',
+    company: 'Tech Innovations',
+    duration: '2022 - Present',
+    description: 'Developing innovative software solutions and collaborating with cross-functional teams to deliver high-quality projects.'
+  },
+  {
+    id: 2,
+    title: 'Frontend Developer',
+    company: 'Creative Agency',
+    duration: '2020 - 2022',
+    description: 'Worked on various web applications, focusing on user experience and innovative designs.'
+  },
+  {
+    id: 3,
+    title: 'Intern',
+    company: 'Startups United',
+    duration: '2019 - 2020',
+    description: 'Gained experience in software development and participated in agile methodologies.'
+  }
+];
 
 const WorkExperience = () => {
-    return (
-        <section className="work-experience">
-            <h2>Work Experience</h2>
-            <div className="experience">
-                <h3>Maedric</h3>
-                <h4>Position: Software Engineer</h4>
-                <p><strong>Duration:</strong> Jan 2021 - Present</p>
-                <ul>
-                    <li>Developed and maintained web applications using React and Node.js.</li>
-                    <li>Collaborated with design teams to create user-friendly interfaces.</li>
-                    <li>Participated in code reviews and mentored junior developers.</li>
-                </ul>
-            </div>
-            <div className="experience">
-                <h3>Heat Scheme</h3>
-                <h4>Position: Frontend Developer</h4>
-                <p><strong>Duration:</strong> Mar 2020 - Dec 2020</p>
-                <ul>
-                    <li>Implemented responsive web designs to enhance user experience.</li>
-                    <li>Worked with REST APIs to fetch and display dynamic data.</li>
-                    <li>Contributed to the redesign of the company's main website.</li>
-                </ul>
-            </div>
-            <div className="experience">
-                <h3>Immutag</h3>
-                <h4>Position: Backend Developer</h4>
-                <p><strong>Duration:</strong> Jun 2019 - Feb 2020</p>
-                <ul>
-                    <li>Built server-side logic and APIs using Node.js and Express.</li>
-                    <li>Optimized database queries for performance improvements.</li>
-                    <li>Ensured code quality through various testing methodologies.</li>
-                </ul>
-            </div>
-            <div className="experience">
-                <h3>Unnamed Business Website Project</h3>
-                <h4>Position: Full Stack Developer</h4>
-                <p><strong>Duration:</strong> Jan 2019 - May 2019</p>
-                <ul>
-                    <li>Developed a complete business website from concept to deployment.</li>
-                    <li>Integrated payment gateway and user authentication systems.</li>
-                    <li>Worked closely with clients to gather requirements and feedback.</li>
-                </ul>
-            </div>
-        </section>
-    );
+  return (
+    <section className="py-16 bg-white">
+      <div className="container mx-auto px-4">
+        <h2 className="text-3xl font-bold text-center mb-8">Work Experience</h2>
+        <div className="grid md:grid-cols-2 gap-8">
+          {workExperiences.map((experience) => (
+            <motion.div 
+              key={experience.id}
+              className="p-6 border rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300"
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ duration: 0.5 }}
+            >
+              <h3 className="text-xl font-semibold mb-2">{experience.title}</h3>
+              <p className="text-gray-700 mb-1">{experience.company}</p>
+              <p className="text-gray-500 mb-4">{experience.duration}</p>
+              <p className="text-gray-600">{experience.description}</p>
+            </motion.div>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
 };
 
 export default WorkExperience;
