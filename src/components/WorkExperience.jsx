@@ -19,7 +19,7 @@ const workExperiences = [
     subtitle: "Premium Jewellery & Gemstones E-Commerce Platform",
     role: "Full-Stack Developer",
     duration: "9+ Months",
-    domain: "E-Commerce Â· Luxury Jewelry",
+    domain: "E-Commerce, Luxury Jewelry",
     tags: ["Next.js", "Tailwind CSS", "Node.js", "MongoDB", "Stripe", "Git"],
     overview:
       "Over the past 9+ months, I have been working with an international client on a project called Maedric, a premium jewelry e-commerce platform that evolved from a frontend task into a complete, production-grade e-commerce system.",
